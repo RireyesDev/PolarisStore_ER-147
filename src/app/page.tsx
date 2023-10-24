@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
        <p>POLARIS STORE</p>
+       <button>CLICK ME</button>
     </main>
   )
 }
