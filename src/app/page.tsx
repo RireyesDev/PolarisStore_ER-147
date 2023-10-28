@@ -6,6 +6,7 @@ import { GlobalStyles } from './globalStyles'
 import { PrimaryButton } from '@/components/PrimaryButton'
 import { SecondaryButton } from '@/components/SecondaryButton'
 import { BuyButton } from '@/components/BuyButton'
+import { PolarisCard } from '@/components/PolarisCard'
 
 export default function Home() {
   return (
@@ -13,8 +14,11 @@ export default function Home() {
       <GlobalStyles/>      
       <p>POLARIS STORE</p>
       <PrimaryButton>INICIAR SESIÓN</PrimaryButton>
-      <SecondaryButton>REGISTRATE</SecondaryButton>
+      
       <BuyButton>COMPRAR</BuyButton>
+      <PolarisCard>
+        <SecondaryButton>REGISTRATE</SecondaryButton>        
+      </PolarisCard>
     </main>
   )
 }
