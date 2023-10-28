@@ -10,8 +10,8 @@ const GlobalStyles = createGlobalStyle`
         --primary-color_hover: #8D1BD0;
         --primary-color_active: #2A083D;
         --secondary-color: #a525f8;
-        --secondary-color_hover: #8D1BD0;
-        --secondary-color_active: #2A083D;
+        --secondary-color_hover: #991DE0;
+        --secondary-color_active: #3E0C5A;
         --primary-color_triad: #17b460;
         --light-color: #f2f2f2;
         --dark-color: #2e2e2e;
