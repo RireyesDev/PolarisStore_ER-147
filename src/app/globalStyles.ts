@@ -7,7 +7,11 @@ const GlobalStyles = createGlobalStyle`
 
     :root{
         --primary-color: #7817b2;
+        --primary-color_hover: #8D1BD0;
+        --primary-color_active: #2A083D;
         --secondary-color: #a525f8;
+        --secondary-color_hover: #8D1BD0;
+        --secondary-color_active: #2A083D;
         --primary-color_triad: #17b460;
         --light-color: #f2f2f2;
         --dark-color: #2e2e2e;
