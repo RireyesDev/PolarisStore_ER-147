@@ -27,4 +27,4 @@ const PrimaryButton = (props: any) => {
     );
 }
 
-export { PrimaryButton }
+export { PrimaryButton, PrimaryBTN }
