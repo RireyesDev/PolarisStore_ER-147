@@ -13,6 +13,8 @@ const GlobalStyles = createGlobalStyle`
         --secondary-color_hover: #991DE0;
         --secondary-color_active: #3E0C5A;
         --primary-color_triad: #17b460;
+        --primary-color_triad_hover: #128E4C;
+        --primary-color_triad_active: #0E6938;
         --light-color: #f2f2f2;
         --dark-color: #2e2e2e;
     }
