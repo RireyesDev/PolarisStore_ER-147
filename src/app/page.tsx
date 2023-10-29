@@ -8,16 +8,14 @@ import { SecondaryButton } from '@/components/SecondaryButton'
 import { BuyButton } from '@/components/BuyButton'
 import { PolarisCard } from '@/components/PolarisCard'
 import { TextBox } from '@/components/TextBox'
+import { TitleCard } from '@/components/TitleCard'
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <GlobalStyles/>      
-      <p>POLARIS STORE</p>
-      <PrimaryButton>INICIAR SESIÓN</PrimaryButton>
-      
-      <BuyButton>COMPRAR</BuyButton>
+      <GlobalStyles/>  
       <PolarisCard>
+        <TitleCard title="INICIAR SESIÓN"></TitleCard>
         <TextBox title="Usuario" placeHolder="John"></TextBox>
         <TextBox title="Contraseña" placeHolder="*******************"></TextBox>
         <SecondaryButton>REGISTRATE</SecondaryButton>        

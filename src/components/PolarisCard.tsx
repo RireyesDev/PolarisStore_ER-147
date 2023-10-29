@@ -8,7 +8,7 @@ const Card = styled.section`
     width: 340px;
     min-height: 360px;
     display: grid;
-    grid-template-rows: 128px auto;
+    grid-template-rows: 112px auto;
     grid-template-columns: 100%;
     background-color: var(--dark-color);
     border-radius: 22px 22px 32px 32px ;
