@@ -13,11 +13,7 @@ import { TitleCard } from '@/components/TitleCard'
 export default function Home() {
   return (
     <main className={styles.main}>
-      <GlobalStyles/>      
-      <p>POLARIS STORE</p>
-      <PrimaryButton>INICIAR SESIÓN</PrimaryButton>
-      
-      <BuyButton>COMPRAR</BuyButton>
+      <GlobalStyles/>  
       <PolarisCard>
         <TitleCard title="INICIAR SESIÓN"></TitleCard>
         <TextBox title="Usuario" placeHolder="John"></TextBox>
