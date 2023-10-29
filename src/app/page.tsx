@@ -8,6 +8,7 @@ import { SecondaryButton } from '@/components/SecondaryButton'
 import { BuyButton } from '@/components/BuyButton'
 import { PolarisCard } from '@/components/PolarisCard'
 import { TextBox } from '@/components/TextBox'
+import { TitleCard } from '@/components/TitleCard'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       
       <BuyButton>COMPRAR</BuyButton>
       <PolarisCard>
+        <TitleCard title="INICIAR SESIÓN"></TitleCard>
         <TextBox title="Usuario" placeHolder="John"></TextBox>
         <TextBox title="Contraseña" placeHolder="*******************"></TextBox>
         <SecondaryButton>REGISTRATE</SecondaryButton>        
