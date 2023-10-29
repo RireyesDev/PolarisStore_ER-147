@@ -17,6 +17,8 @@ const GlobalStyles = createGlobalStyle`
         --primary-color_triad_active: #0E6938;
         --light-color: #f2f2f2;
         --dark-color: #2e2e2e;
+
+        --size-button-textBox: 280px;
     }
 
     *{
@@ -25,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
 
-    html, p, button{
+    html, p, button, h3{
         font-family: 'Nunito', sans-serif;
         letter-spacing: 1px;
     }

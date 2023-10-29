@@ -10,6 +10,8 @@
   --primary-color_triad_active: #0E6938;
   --light-color: #f2f2f2;
   --dark-color: #2e2e2e;
+
+  --size-button-textBox: 280px;
 }
 
 * {

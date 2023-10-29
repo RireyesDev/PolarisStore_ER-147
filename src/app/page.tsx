@@ -7,6 +7,7 @@ import { PrimaryButton } from '@/components/PrimaryButton'
 import { SecondaryButton } from '@/components/SecondaryButton'
 import { BuyButton } from '@/components/BuyButton'
 import { PolarisCard } from '@/components/PolarisCard'
+import { TextBox } from '@/components/TextBox'
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
       
       <BuyButton>COMPRAR</BuyButton>
       <PolarisCard>
+        <TextBox title="Usuario" placeHolder="John"></TextBox>
+        <TextBox title="Contraseña" placeHolder="*******************"></TextBox>
         <SecondaryButton>REGISTRATE</SecondaryButton>        
       </PolarisCard>
     </main>
