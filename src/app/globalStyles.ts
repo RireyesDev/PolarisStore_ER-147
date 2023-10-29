@@ -27,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
 
-    html, p, button, h3{
+    html, p, button, h2, h3{
         font-family: 'Nunito', sans-serif;
         letter-spacing: 1px;
     }
