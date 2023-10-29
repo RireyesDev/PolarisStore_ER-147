@@ -7,10 +7,18 @@ const GlobalStyles = createGlobalStyle`
 
     :root{
         --primary-color: #7817b2;
+        --primary-color_hover: #8D1BD0;
+        --primary-color_active: #2A083D;
         --secondary-color: #a525f8;
+        --secondary-color_hover: #991DE0;
+        --secondary-color_active: #3E0C5A;
         --primary-color_triad: #17b460;
+        --primary-color_triad_hover: #128E4C;
+        --primary-color_triad_active: #0E6938;
         --light-color: #f2f2f2;
         --dark-color: #2e2e2e;
+
+        --size-button-textBox: 280px;
     }
 
     *{
@@ -19,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
 
-    html, p, button{
+    html, p, button, h3{
         font-family: 'Nunito', sans-serif;
         letter-spacing: 1px;
     }
