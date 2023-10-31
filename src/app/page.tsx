@@ -11,12 +11,13 @@ import { TextBox } from '@/components/TextBox'
 import { TitleCard } from '@/components/TitleCard'
 import { DivContainer } from '@/styles/DivContainer'
 import { CardLogIn } from '@/components/Card_LogIn'
+import { CardSignIn } from '@/components/Card_SignIn'
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <GlobalStyles/>  
-      <CardLogIn></CardLogIn>
+      <CardSignIn></CardSignIn>
     </main>
   )
 }
