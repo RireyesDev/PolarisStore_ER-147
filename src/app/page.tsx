@@ -12,12 +12,13 @@ import { TitleCard } from '@/components/TitleCard'
 import { DivContainer } from '@/styles/DivContainer'
 import { CardLogIn } from '@/components/Card_LogIn'
 import { CardSignIn } from '@/components/Card_SignIn'
+import { CardEditAccount } from '@/components/Card_EditAccount'
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <GlobalStyles/>  
-      <CardSignIn></CardSignIn>
+      <CardEditAccount></CardEditAccount>
     </main>
   )
 }
