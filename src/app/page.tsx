@@ -13,12 +13,13 @@ import { DivContainer } from '@/styles/DivContainer'
 import { CardLogIn } from '@/components/Card_LogIn'
 import { CardSignIn } from '@/components/Card_SignIn'
 import { CardEditAccount } from '@/components/Card_EditAccount'
+import { CardEditForm } from '@/components/Card_EditForm'
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <GlobalStyles/>  
-      <CardEditAccount></CardEditAccount>
+      <CardEditForm></CardEditForm>
     </main>
   )
 }
