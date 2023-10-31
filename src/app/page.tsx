@@ -14,12 +14,13 @@ import { CardLogIn } from '@/components/Card_LogIn'
 import { CardSignIn } from '@/components/Card_SignIn'
 import { CardEditAccount } from '@/components/Card_EditAccount'
 import { CardEditForm } from '@/components/Card_EditForm'
+import { CardEditPayment } from '@/components/Card_EditPayment'
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <GlobalStyles/>  
-      <CardEditForm></CardEditForm>
+      <CardEditPayment></CardEditPayment>
     </main>
   )
 }
