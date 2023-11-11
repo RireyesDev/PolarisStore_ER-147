@@ -1,9 +1,19 @@
 'use client'
-import { PrimaryButton } from "@/components/PrimaryButton"
+import { CardLogIn } from "@/components/Card_LogIn";
+import styled from "styled-components";
 
+const DivContainer = styled.div`
+    width: 100%;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;    
+`;
 
-export default function Welcome() {
+export default function LogIn() {
     return (
-        <PrimaryButton>Login</PrimaryButton>
+        <DivContainer>
+            <CardLogIn></CardLogIn>
+        </DivContainer>
     );
 }
