@@ -7,7 +7,7 @@ const Title = styled.h2`
     height: 42px;
     display: grid;
     place-content: center;
-    margin: 18px 0px;
+    margin: 14px 0px;
     font-weight: bold;
 
 `;
