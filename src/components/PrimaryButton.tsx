@@ -10,7 +10,7 @@ const PrimaryBTN = styled.button`
     border: none;
     cursor: pointer;
     letter-spacing: 1px;
-    margin: 12px 0px;    
+    margin: 8px 0px;    
 
     &:hover{
         background-color: var(--primary-color_hover);
