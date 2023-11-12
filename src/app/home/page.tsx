@@ -1,9 +1,9 @@
 'use client'
-import { PrimaryButton } from "@/components/PrimaryButton"
+import { NavBar } from "@/components/NavBar";
 
 
 export default function Welcome() {
     return (
-        <PrimaryButton>Home</PrimaryButton>
+        <NavBar></NavBar>
     );
 }
