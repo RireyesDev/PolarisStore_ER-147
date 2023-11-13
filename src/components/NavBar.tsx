@@ -16,6 +16,7 @@ const NavContainer = styled.nav`
     grid-template-rows: 100%;
     place-items: center;
     border-bottom: 1px solid var(--light-color);
+    z-index: 5;
 `;
 
 // Create component styled button name: MenuButton  
