@@ -24,18 +24,15 @@ const TableContainer = styled.section`
 
 
 const TableProductCards = () => {
+
+    const exampleArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
     return(
         <MainContainer>
              <TableContainer>
-                <Productcard></Productcard>
-                <Productcard></Productcard>
-                <Productcard></Productcard>
-                <Productcard></Productcard>
-                <Productcard></Productcard>
-                <Productcard></Productcard>
-                <Productcard></Productcard>
-                <Productcard></Productcard>
-                <Productcard></Productcard>
+                {exampleArray.map((card, index) => (
+                    <Productcard key={index}></Productcard>    
+                ))}
             </TableContainer>
         </MainContainer>       
     );
