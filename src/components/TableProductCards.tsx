@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Productcard } from "./ProductCard";
+import { TitlePage } from "./TitlePage";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -13,7 +14,7 @@ const MainContainer = styled.main`
 const TableContainer = styled.section`
     width: 100%;
     min-height: 320px;
-    background-color: #b9d8b9;
+    background-color: white;
     padding-top: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -30,6 +31,7 @@ const TableProductCards = () => {
     return(
         <MainContainer>
              <TableContainer>
+                <TitlePage>PRODUCTOS</TitlePage>
                 {exampleArray.map((card, index) => (
                     <Productcard key={index}></Productcard>    
                 ))}
