@@ -10,7 +10,7 @@ const NavContainer = styled.nav`
     top: 0;
     width: 100%;
     min-width: 900px;
-    height: 72px;
+    min-height: 77px;
     display: grid;
     grid-template-columns: 10% 20% 50% 10% 10%;
     grid-template-rows: 100%;
@@ -21,8 +21,8 @@ const NavContainer = styled.nav`
 // Create component styled button name: MenuButton  
 
 const TheButton = styled.button`
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
     background: none;
     background-repeat: no-repeat;
     background-position: center;
