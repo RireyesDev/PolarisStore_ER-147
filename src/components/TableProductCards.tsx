@@ -7,12 +7,16 @@ const MainContainer = styled.main`
     width: 100%;
     height: 100%;
     min-height: 92vh;
-    background-color: #c48d8d;
+    background-color: white;
     display: grid;    
 `;
 
 const TableContainer = styled.section`
-    width: 100%;
+    width: 78%;
+    border-radius: 30px 0px 0px 0px;
+    box-shadow: -14px 6px 29px 0px rgba(0,0,0,0.2);
+
+
     min-height: 320px;
     background-color: white;
     padding-top: 20px;
@@ -21,6 +25,7 @@ const TableContainer = styled.section`
     justify-content: center;
     gap: 10px;
     justify-self: right;    
+    z-index: 2;
 `;
 
 

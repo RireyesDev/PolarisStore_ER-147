@@ -18,6 +18,7 @@ const Card = styled.div`
     display: grid;
     grid-template-columns: 30% 70%;
     grid-template-rows: 20% 30% 50%;
+    z-index: 3;
 `;
 
 const AccountButton = styled(PrimaryBTN)`
