@@ -1,9 +1,20 @@
 'use client'
-import { PrimaryButton } from "@/components/PrimaryButton"
+import { NavBar } from "@/components/NavBar";
+import { CardAccount } from "@/components/CardAccount";
+import { Productcard } from "@/components/ProductCard";
+import { TableProductCards } from "@/components/TableProductCards";
+import { ListCategories } from "@/components/ListCategories";
+import { BagCard } from "@/components/BagCard";
 
 
-export default function Welcome() {
+export default function Home() {
     return (
-        <PrimaryButton>Home</PrimaryButton>
+        <>
+            <NavBar></NavBar>
+            <CardAccount></CardAccount>
+            <BagCard></BagCard>
+            <ListCategories></ListCategories>
+            <TableProductCards></TableProductCards>
+        </>
     );
 }

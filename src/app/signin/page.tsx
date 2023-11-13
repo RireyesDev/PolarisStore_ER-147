@@ -1,9 +1,21 @@
 'use client'
-import { PrimaryButton } from "@/components/PrimaryButton"
+import { CardSignIn } from "@/components/Card_SignIn";
+import styled from "styled-components";
+
+// Create styled component for title Container 
+
+const DivContainer = styled.div`
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;    
+`;
 
 
-export default function Welcome() {
+export default function SignIn() {
     return (
-        <PrimaryButton>Signin</PrimaryButton>
+        <DivContainer>
+            <CardSignIn></CardSignIn>
+        </DivContainer>
     );
 }
