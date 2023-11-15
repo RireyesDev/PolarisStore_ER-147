@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Productcard } from "./ProductCard";
 import { TitlePage } from "./TitlePage";
+import { products } from "@/database/products";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -31,14 +32,17 @@ const TableContainer = styled.section`
 
 const TableProductCards = () => {
 
-    const exampleArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
     return(
         <MainContainer>
              <TableContainer>
                 <TitlePage>PRODUCTOS</TitlePage>
-                {exampleArray.map((card, index) => (
-                    <Productcard key={index}></Productcard>    
+                {products.map((product, index) => (
+                    <Productcard 
+                        key={index}
+                        image={product.image}
+                        price={product.price}
+                        name={product.name}
+                    ></Productcard>    
                 ))}
             </TableContainer>
         </MainContainer>       

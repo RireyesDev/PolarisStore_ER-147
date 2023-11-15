@@ -26,6 +26,7 @@ const ImageContainer = styled(Image)`
   width: 100%;
   height: 100%;  
   overflow: hidden;
+  object-fit: cover;
   grid-column: 1 / 3;
   grid-row: 1 / 2;
   border-radius: 20px 20px 0 0 ;
@@ -33,23 +34,28 @@ const ImageContainer = styled(Image)`
 
 const TextContainer = `
     width: 84%;
+    max-width: 146px;
     justify-self: center;
     display: grid;
     align-content: center;
     justify-content: start;    
     letter-spacing: 1px;
     font-family: 'Nunito', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 const Price = styled.h3`   
     ${TextContainer}
-    font-weight: bold;
+    font-weight: bold;    
 `;
 
 const Name = styled.h4`
     ${TextContainer}
     font-weight: normal;    
-    align-content: start;
+    align-content: start;    
+    text-overflow: ellipsis;
 `;
 
 const IconSpan = styled.span`
@@ -86,12 +92,12 @@ const BuyButton = styled.button`
   }
 `;
 
-const Productcard = () => {
+const Productcard = (props: any) => {
     return(
         <Container>
-            <ImageContainer src={productExample} alt="Example"></ImageContainer>
-            <Price>$ 300</Price>
-            <Name>Air Jordan</Name>
+            <ImageContainer src={props.image} alt="Example" width={700} height={700}></ImageContainer>
+            <Price>{props.price}</Price>
+            <Name>{props.name}</Name>
             <BuyButton><IconSpan></IconSpan></BuyButton>
         </Container>
     );
