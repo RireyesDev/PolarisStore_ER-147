@@ -1,9 +1,11 @@
 import { createContext } from "react";
 
 type PolarisContextType = {
-    showAccount: boolean,
+    showAccount: boolean;
+    setShowAccount: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const PolarisContext = createContext({});
+const PolarisContext = createContext<PolarisContextType | undefined>(undefined);
 
-export { PolarisContext }
+export { PolarisContext };
+export type { PolarisContextType };
