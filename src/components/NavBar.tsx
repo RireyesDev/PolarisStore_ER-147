@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
 import MenuIcon from '/public/icons/menu.png'
 import BagIcon from '/public/icons/bag.png'
 import UserIcon from '/public/icons/user.png'
 import PolariLogo from '/public/Polaris_Dark.svg'
+import { PolarisContext } from "@/context/PolarisContext";
 
 // Create Navbar component styled component, name: NavBar
 const NavContainer = styled.nav`
@@ -58,12 +59,19 @@ const UserButton = styled(TheButton)`
 `;
 
 const NavBar = (props: any) => {
+
+    const context = useContext(PolarisContext);
+
+    function clickUserCard(){
+        context?.setShowAccount(!context.showAccount);
+    }
+
     return(
         <NavContainer>
             <MenuButton></MenuButton>
             <HomeButton></HomeButton>
             <BagButton></BagButton>
-            <UserButton></UserButton>
+            <UserButton onClick={() => clickUserCard()}></UserButton>
         </NavContainer>
     );
 }
