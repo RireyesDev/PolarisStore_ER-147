@@ -64,13 +64,23 @@ const NavBar = (props: any) => {
 
     function clickUserCard(){
         context?.setShowAccount(!context.showAccount);
+        if(context?.showBag === true){
+            context?.setShowBag(!context.showBag);
+        }
+    }
+
+    function clickBagCard(){
+        context?.setShowBag(!context.showBag);
+        if(context?.showAccount === true){
+            context?.setShowAccount(!context.showAccount);
+        }
     }
 
     return(
         <NavContainer>
             <MenuButton></MenuButton>
             <HomeButton></HomeButton>
-            <BagButton></BagButton>
+            <BagButton onClick={() => clickBagCard()}></BagButton>
             <UserButton onClick={() => clickUserCard()}></UserButton>
         </NavContainer>
     );

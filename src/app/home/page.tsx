@@ -20,7 +20,7 @@ export default function Home() {
         <>
             <NavBar></NavBar>
             {context?.showAccount ? <CardAccount></CardAccount> : <></>}
-            <BagCard></BagCard>
+            {context?.showBag ? <BagCard></BagCard> : <></>}
             <ListCategories></ListCategories>
             <TableProductCards></TableProductCards>
         </>
