@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Productcard } from "./ProductCard";
 import { TitlePage } from "./TitlePage";
 import { products } from "@/database/products";
+import { PolarisContext } from "@/context/PolarisContext";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -32,9 +33,14 @@ const TableContainer = styled.section`
 
 const TableProductCards = () => {
 
+    const context = useContext(PolarisContext);
+
     return(
         <MainContainer>
-             <TableContainer>
+             <TableContainer style={{
+                width: `${context?.showCategories ? '80%' : '100%'}`,
+                borderRadius: `${context?.showCategories ? '30px 0px 0px 0px' : '0px'}`,
+             }}>
                 <TitlePage>PRODUCTOS</TitlePage>
                 {products.map((product, index) => (
                     <Productcard 

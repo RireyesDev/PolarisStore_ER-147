@@ -76,9 +76,16 @@ const NavBar = (props: any) => {
         }
     }
 
+    function clickCategories(){
+        context?.setShowCategories(!context.showCategories);
+        if(context?.showAccount === true){
+            context?.setShowAccount(!context.showAccount);
+        }
+    }
+
     return(
         <NavContainer>
-            <MenuButton></MenuButton>
+            <MenuButton onClick={() => clickCategories()}></MenuButton>
             <HomeButton></HomeButton>
             <BagButton onClick={() => clickBagCard()}></BagButton>
             <UserButton onClick={() => clickUserCard()}></UserButton>

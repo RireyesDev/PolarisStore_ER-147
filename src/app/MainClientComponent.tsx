@@ -8,6 +8,8 @@ export default function MainClientComponent(props: any) {
 
     const [showAccount, setShowAccount] = useState<boolean>(false);
     const [showBag, setShowBag] = useState<boolean>(false);
+    const [showCategories, setShowCategories] = useState<boolean>(false);
+
 
 
     const polarisContextValue : PolarisContextType = {
@@ -15,6 +17,8 @@ export default function MainClientComponent(props: any) {
       setShowAccount,
       showBag,
       setShowBag,
+      showCategories,
+      setShowCategories,
     }
 
     return(        

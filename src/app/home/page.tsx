@@ -8,9 +8,6 @@ import { BagCard } from "@/components/BagCard";
 import { PolarisContext } from "@/context/PolarisContext";
 import { useContext } from "react";
 
-type PolarisContextType = {
-    showAccount: boolean,
-}
 
 export default function Home() {
 
