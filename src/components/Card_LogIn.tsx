@@ -14,7 +14,7 @@ const ForgotText = styled.h4`
     color: var(--primary-color);   
 `;
 
-const CardLogIn = () => {
+const CardLogIn = (props: any) => {
 
     return(
         <PolarisCard>
@@ -24,8 +24,8 @@ const CardLogIn = () => {
                 <TextBox title="Contraseña" placeHolder="*****************"></TextBox>
                 <ForgotText>Olvide mi contrasesña</ForgotText>
             </DivContainer>
-            <PrimaryButton>INICIAR</PrimaryButton>
-            <SecondaryButton>REGISTRATE</SecondaryButton>
+            <PrimaryButton clickButton={props.clickPrimaryAction}>INICIAR</PrimaryButton>
+            <SecondaryButton clickButton={props.clickSecondaryAction}>REGISTRATE</SecondaryButton>
         </PolarisCard>
     );
 }

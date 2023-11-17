@@ -6,8 +6,8 @@ import { NavBar } from '@/components/NavBar'
 import { CardAccount } from '@/components/CardAccount'
 
 
-
 export default function Home() {
+
   return (
     <main className={styles.main}>
       <GlobalStyles/>  

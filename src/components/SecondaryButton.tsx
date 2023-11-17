@@ -18,7 +18,7 @@ const SecondaryBTN = styled(PrimaryBTN)`
 
 const SecondaryButton = (props: any) => {
     return(
-        <SecondaryBTN>{props.children}</SecondaryBTN>
+        <SecondaryBTN onClick={props.clickButton}>{props.children}</SecondaryBTN>
     );
 }
 

@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
 import MenuIcon from '/public/icons/menu.png'
 import BagIcon from '/public/icons/bag.png'
 import UserIcon from '/public/icons/user.png'
 import PolariLogo from '/public/Polaris_Dark.svg'
+import { PolarisContext } from "@/context/PolarisContext";
+import { useRouter } from "next/navigation";
 
 // Create Navbar component styled component, name: NavBar
 const NavContainer = styled.nav`
@@ -58,12 +60,42 @@ const UserButton = styled(TheButton)`
 `;
 
 const NavBar = (props: any) => {
+
+    const context = useContext(PolarisContext);
+
+    function clickUserCard(){
+        context?.setShowAccount(!context.showAccount);
+        if(context?.showBag === true){
+            context?.setShowBag(!context.showBag);
+        }
+    }
+
+    function clickBagCard(){
+        context?.setShowBag(!context.showBag);
+        if(context?.showAccount === true){
+            context?.setShowAccount(!context.showAccount);
+        }
+    }
+
+    function clickCategories(){
+        context?.setShowCategories(!context.showCategories);
+        if(context?.showAccount === true){
+            context?.setShowAccount(!context.showAccount);
+        }
+    }
+
+    const router = useRouter();
+
+    function goHome(){
+        router.push('/home');
+    }
+
     return(
         <NavContainer>
-            <MenuButton></MenuButton>
-            <HomeButton></HomeButton>
-            <BagButton></BagButton>
-            <UserButton></UserButton>
+            <MenuButton onClick={() => clickCategories()}></MenuButton>
+            <HomeButton onClick={() => goHome()}></HomeButton>
+            <BagButton onClick={() => clickBagCard()}></BagButton>
+            <UserButton onClick={() => clickUserCard()}></UserButton>
         </NavContainer>
     );
 }

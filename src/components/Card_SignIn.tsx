@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { PolarisCard } from "./PolarisCard";
 import { TitleCard } from "./TitleCard";
 import { DivContainer } from "@/styles/DivContainer";
 import { TextBox } from "./TextBox";
 import { PrimaryButton } from "./PrimaryButton";
+import { PolarisContext } from "@/context/PolarisContext";
+import { useRouter } from "next/navigation";
 
 
 
 const CardSignIn = () => {
+
+    const router = useRouter();
+
+    function goHome(){
+        router.push('/home');
+    }
 
     return(
         <PolarisCard>
@@ -20,7 +28,7 @@ const CardSignIn = () => {
                 <TextBox title="Añadir Contraseña" placeHolder="*****************" type="password"></TextBox>
                 <TextBox title="Repetir Contraseña" placeHolder="*****************" type="password"></TextBox>
             </DivContainer>
-            <PrimaryButton>CREAR USUARIO</PrimaryButton>
+            <PrimaryButton clickButton={() => goHome()}>CREAR USUARIO</PrimaryButton>
         </PolarisCard>
     );
 }

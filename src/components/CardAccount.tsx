@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { PrimaryBTN } from "./PrimaryButton";
 import UserIcon from '/public/icons/user.png'
+import { useRouter } from "next/navigation";
 
 const Card = styled.div`
     position: absolute;
@@ -62,12 +63,15 @@ const IconUser = styled.div`
 
 
 const CardAccount = () => {
+
+    const router = useRouter();
+
     return(
         <Card>
             <IconUser></IconUser>
             <NameUser>Eduardo Rireyes</NameUser>
-            <AccountButton>MI CUENTA</AccountButton>
-            <LogOutButton>SALIR</LogOutButton>
+            <AccountButton onClick={() => {router.push('/my-account')}}>MI CUENTA</AccountButton>
+            <LogOutButton onClick={() => {router.push('/welcome')}}>SALIR</LogOutButton>
         </Card>
     );
 }
