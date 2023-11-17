@@ -41,6 +41,15 @@ const TableProductCards = () => {
         router.push(`/products/${id}`);
     }
 
+    function buyProduct(id: number){
+        
+        context?.setAddProducts(prevProducts => {
+            return [...prevProducts, context?.products[id - 1]];
+        });   
+        
+        context?.setShowBag(true);
+    }
+
     return(
         <MainContainer>
              <TableContainer style={{
@@ -55,6 +64,7 @@ const TableProductCards = () => {
                         price={product.price}
                         name={product.name}
                         viewProduct={() => goToProduct(product.id)}
+                        clickBuyProduct={() => buyProduct(product.id)}
                     ></Productcard>    
                 ))}
             </TableContainer>

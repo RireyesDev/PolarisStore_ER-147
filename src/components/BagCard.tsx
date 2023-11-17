@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { BuyButton } from "./BuyButton";
 import { PrimaryButton } from "./PrimaryButton";
+import { PolarisCard } from "./PolarisCard";
+import { PolarisContext } from "@/context/PolarisContext";
 
 
 const Card = styled.div`
@@ -45,13 +47,21 @@ const BackgroundGray = styled.div`
     border-radius: 20px;
     grid-column: 1 / 3;
     place-self: center;
+    padding: 14px;
 `;
 
 
 const BagCard = () => {
+
+    const context = useContext(PolarisContext);
+
     return(
         <Card>
-            <BackgroundGray></BackgroundGray>
+            <BackgroundGray>
+                {context?.addProducts.map( product => (
+                    <h5 style={{color: 'white'}}>{product.name}</h5>
+                ))}
+            </BackgroundGray>
             <WrapPrimaryButton>
                 <PrimaryButton>IR A LISTA DE COMPRAS</PrimaryButton>
             </WrapPrimaryButton>

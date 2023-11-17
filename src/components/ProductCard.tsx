@@ -94,13 +94,14 @@ const BuyButton = styled.button`
 `;
 
 const Productcard = (props: any) => {
+
     return(
-        <Container>
-            <ImageContainer onClick={props.viewProduct} src={props.image} alt="Example" width={700} height={700}></ImageContainer>
-            <Price>{props.price}</Price>
-            <Name>{props.name}</Name>
-            <BuyButton><IconSpan></IconSpan></BuyButton>
-        </Container>
+      <Container>
+          <ImageContainer onClick={props.viewProduct} src={props.image} alt="Example" width={700} height={700}></ImageContainer>
+          <Price>{props.price}</Price>
+          <Name>{props.name}</Name>
+          <BuyButton onClick={props.clickBuyProduct}><IconSpan></IconSpan></BuyButton>
+      </Container>
     );
 }
 
