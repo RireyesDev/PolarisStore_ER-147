@@ -6,6 +6,8 @@ import Image from "next/image";
 import PolarisLight from "/public/Polaris_Light.svg";
 import Product1 from "/public/product_microfone1.jpg";
 import Product2 from "/public/product_microfone2.jpg";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 const ContainerPage = styled.div`
@@ -62,6 +64,8 @@ const WelcomeText = styled.h1`
 
 export default function Welcome() {
 
+    const router = useRouter();
+
     const StoreDescription = "Obten la mejor experiencia y compra los mejores productos";
 
     return (
@@ -73,7 +77,10 @@ export default function Welcome() {
 
             <SecondBackground>
                 <ContainerCard>
-                    <CardLogIn />
+                    <CardLogIn 
+                        clickPrimaryAction={() => router.push('/home')} 
+                        clickSecondaryAction={() => router.push('/signin')}
+                    />
                 </ContainerCard>
             </SecondBackground>
         </ContainerPage>

@@ -24,7 +24,7 @@ const PrimaryBTN = styled.button`
 
 const PrimaryButton = (props: any) => {
     return(
-        <PrimaryBTN onClick={() => console.log('OK')}>{props.children}</PrimaryBTN>
+        <PrimaryBTN onClick={props.clickButton}>{props.children}</PrimaryBTN>
     );
 }
 
