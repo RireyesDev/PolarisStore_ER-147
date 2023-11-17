@@ -29,7 +29,8 @@ const ImageContainer = styled(Image)`
   object-fit: cover;
   grid-column: 1 / 3;
   grid-row: 1 / 2;
-  border-radius: 20px 20px 0 0 ;
+  border-radius: 20px 20px 0 0 ;  
+  cursor: pointer;
 `;
 
 const TextContainer = `
@@ -95,7 +96,7 @@ const BuyButton = styled.button`
 const Productcard = (props: any) => {
     return(
         <Container>
-            <ImageContainer src={props.image} alt="Example" width={700} height={700}></ImageContainer>
+            <ImageContainer onClick={props.viewProduct} src={props.image} alt="Example" width={700} height={700}></ImageContainer>
             <Price>{props.price}</Price>
             <Name>{props.name}</Name>
             <BuyButton><IconSpan></IconSpan></BuyButton>

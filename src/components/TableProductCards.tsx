@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { Productcard } from "./ProductCard";
 import { TitlePage } from "./TitlePage";
-import { products } from "@/database/products";
 import { PolarisContext } from "@/context/PolarisContext";
+import { useRouter } from "next/navigation";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -35,6 +35,12 @@ const TableProductCards = () => {
 
     const context = useContext(PolarisContext);
 
+    const router = useRouter();
+
+    function goToProduct(id: number){
+        router.push(`/products/${id}`);
+    }
+
     return(
         <MainContainer>
              <TableContainer style={{
@@ -42,12 +48,13 @@ const TableProductCards = () => {
                 borderRadius: `${context?.showCategories ? '30px 0px 0px 0px' : '0px'}`,
              }}>
                 <TitlePage>PRODUCTOS</TitlePage>
-                {products.map((product, index) => (
+                {context?.products.map((product, index) => (
                     <Productcard 
                         key={index}
                         image={product.image}
                         price={product.price}
                         name={product.name}
+                        viewProduct={() => goToProduct(product.id)}
                     ></Productcard>    
                 ))}
             </TableContainer>

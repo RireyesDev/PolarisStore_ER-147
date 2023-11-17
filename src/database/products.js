@@ -1,4 +1,4 @@
-const products = [
+const productsMain = [
 
     {
     "id": 1,
@@ -82,4 +82,4 @@ const products = [
     }
 ];
 
-export { products }
+export { productsMain }

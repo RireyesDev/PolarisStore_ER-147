@@ -5,6 +5,9 @@ import productExample from '/public/images/product_example.jpg'
 import { PrimaryButton } from "@/components/PrimaryButton"
 import { NavBar } from "@/components/NavBar";
 import { BuyButton } from "@/components/BuyButton";
+import { PolarisCard } from "@/components/PolarisCard";
+import { useContext } from "react";
+import { PolarisContext } from "@/context/PolarisContext";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -28,6 +31,7 @@ const ImageContainer = styled(Image)`
     width: 240px;
     height: 240px;  
     overflow: hidden;
+    object-fit: cover;
     grid-column: 1 / 2;
     grid-row: 1 / 4;
     border-radius: 20px;
@@ -94,17 +98,28 @@ const ContainerButtons = styled.div`
     justify-content: end;
 `;
 
-export default function Products() {
+export default function Products({params}: {params: { id: number}}) {
+
+    const context = useContext(PolarisContext);
+
+    const theProduct = {
+        image: context?.products[params.id - 1].image, 
+        name: context?.products[params.id - 1].name,
+        price: context?.products[params.id - 1].price,
+        description: context?.products[params.id - 1].description,
+        categories: context?.products[params.id - 1].categories,
+    }
+    
     return (
         <>
             <NavBar></NavBar>
             <MainContainer>
                 <Container>                    
                     <ContainerProduct>
-                        <ImageContainer src={productExample} alt="Example"></ImageContainer>
-                        <TitleProduct>Nike - Air Jordan 1</TitleProduct>
-                        <PriceProduct>$ 88</PriceProduct>
-                        <DescriptionProduct>No necesitas una capa para tomar vuelo—solo tus AJ1s. Ya sabes, los que se ven en Miles en Spider-Man: Across the Spider-Verse, exclusivamente en cines. Esta nueva versión del icónico colorway de Chicago cuenta con una mezcla de materiales, que incluyen cuero brillante y gamuza suave. El mundo está esperando, así que entra.</DescriptionProduct>
+                        <ImageContainer src={theProduct.image} alt={theProduct.name} width={700} height={700}></ImageContainer>
+                        <TitleProduct>{theProduct.name}</TitleProduct>
+                        <PriceProduct>{theProduct.price}</PriceProduct>
+                        <DescriptionProduct>{theProduct.description}</DescriptionProduct>
                         <CategoryProduct>Categories</CategoryProduct>
                     </ContainerProduct>
                     <ContainerButtons>
