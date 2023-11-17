@@ -1,14 +1,17 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Nunito } from 'next/font/google'
 import './globals.css'
 import MainClientComponent from './MainClientComponent'
 
 
-const inter = Inter({ subsets: ['latin'] })
+const nunito = Nunito({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Polaris Store',
   description: 'Polaris Store es una tienda online de productos',
+  icons: {icon: "favicon.ico"}
+
 }
 
 export default function RootLayout({
@@ -21,7 +24,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={nunito.className}>
         <MainClientComponent>{children}</MainClientComponent>
       </body>
     </html>

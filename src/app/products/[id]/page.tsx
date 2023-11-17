@@ -56,6 +56,9 @@ const TitleProduct = styled.h3`
     grid-row: 1 / 2;
     margin-left: 10px;
     font-family: 'Nunito', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;    
+    text-overflow: ellipsis;
 `;
 
 const PriceProduct = styled.h3`
