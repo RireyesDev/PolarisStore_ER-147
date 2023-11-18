@@ -4,6 +4,7 @@ import { BuyButton } from "./BuyButton";
 import { PrimaryButton } from "./PrimaryButton";
 import { PolarisCard } from "./PolarisCard";
 import { PolarisContext } from "@/context/PolarisContext";
+import { useRouter } from "next/navigation";
 
 
 const Card = styled.div`
@@ -55,6 +56,12 @@ const BagCard = () => {
 
     const context = useContext(PolarisContext);
 
+    const router = useRouter();
+
+    function goToChecklist(){
+        router.push('/checklist');
+    }
+
     return(
         <Card>
             <BackgroundGray>
@@ -63,7 +70,7 @@ const BagCard = () => {
                 ))}
             </BackgroundGray>
             <WrapPrimaryButton>
-                <PrimaryButton>IR A LISTA DE COMPRAS</PrimaryButton>
+                <PrimaryButton clickButton={() => goToChecklist()}>IR A LISTA DE COMPRAS</PrimaryButton>
             </WrapPrimaryButton>
             <WrapBuyButton>
                 <BuyButton>COMPRAR</BuyButton>
