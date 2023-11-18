@@ -65,7 +65,6 @@ const WelcomeText = styled.h1`
 export default function Welcome() {
 
     const router = useRouter();
-
     const StoreDescription = "Obten la mejor experiencia y compra los mejores productos";
 
     return (
@@ -77,10 +76,7 @@ export default function Welcome() {
 
             <SecondBackground>
                 <ContainerCard>
-                    <CardLogIn 
-                        clickPrimaryAction={() => router.push('/home')} 
-                        clickSecondaryAction={() => router.push('/signin')}
-                    />
+                    <CardLogIn/>
                 </ContainerCard>
             </SecondBackground>
         </ContainerPage>

@@ -5,7 +5,6 @@ import { TitleCard } from "./TitleCard";
 import { DivContainer } from "@/styles/DivContainer";
 import { TextBox } from "./TextBox";
 import { PrimaryButton } from "./PrimaryButton";
-import { PolarisContext } from "@/context/PolarisContext";
 import { useRouter } from "next/navigation";
 
 
@@ -13,10 +12,6 @@ import { useRouter } from "next/navigation";
 const CardSignIn = () => {
 
     const router = useRouter();
-
-    function goHome(){
-        router.push('/home');
-    }
 
     return(
         <PolarisCard>
@@ -28,7 +23,7 @@ const CardSignIn = () => {
                 <TextBox title="Añadir Contraseña" placeHolder="*****************" type="password"></TextBox>
                 <TextBox title="Repetir Contraseña" placeHolder="*****************" type="password"></TextBox>
             </DivContainer>
-            <PrimaryButton clickButton={() => goHome()}>CREAR USUARIO</PrimaryButton>
+            <PrimaryButton btnClick={() => router.push('/home')} btnWidth={280}>CREAR USUARIO</PrimaryButton>
         </PolarisCard>
     );
 }

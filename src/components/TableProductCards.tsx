@@ -14,8 +14,7 @@ const MainContainer = styled.main`
 `;
 
 const TableContainer = styled.section`
-    width: 78%;
-    border-radius: 30px 0px 0px 0px;
+    width: 100%;
     box-shadow: -12px 12px 14px 0px rgba(0,0,0,0.44);
 
 
