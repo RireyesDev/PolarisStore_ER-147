@@ -8,6 +8,7 @@ import { BuyButton } from "@/components/BuyButton";
 import { PolarisCard } from "@/components/PolarisCard";
 import { useContext } from "react";
 import { PolarisContext } from "@/context/PolarisContext";
+import { Navigator } from "@/containers/Navigator";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -115,7 +116,7 @@ export default function Products({params}: {params: { id: number}}) {
     
     return (
         <>
-            <NavBar></NavBar>
+            <Navigator></Navigator>
             <MainContainer>
                 <Container>                    
                     <ContainerProduct>

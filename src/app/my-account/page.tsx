@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { PrimaryButton } from "@/components/PrimaryButton"
 import { NavBar } from "@/components/NavBar";
 import { TitlePage } from "@/components/TitlePage";
+import { Navigator } from "@/containers/Navigator";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -89,7 +90,7 @@ const TitleAccount = styled.h3`
 export default function Welcome() {
     return (
         <>
-            <NavBar></NavBar>
+            <Navigator></Navigator>
             <MainContainer>
                 <TitlePage>MI CUENTA</TitlePage>
                 <GridContainer>

@@ -4,6 +4,9 @@ import { PrimaryButton } from "@/components/PrimaryButton"
 import { PolarisContext } from "@/context/PolarisContext";
 import { useContext } from "react";
 import { NavBar } from "@/components/NavBar";
+import { BuyButton } from "@/components/BuyButton";
+import { TitlePage } from "@/components/TitlePage";
+import { Navigator } from "@/containers/Navigator";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -14,14 +17,16 @@ const MainContainer = styled.main`
 `;
 
 const BackgroundGray = styled.div`
-    display: block;
-    width: 80%;
-    height: 280px;
-    background-color: #d4d0d0;
-    border-radius: 20px;
-    grid-column: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    height: 480px;
     place-self: center;
-    padding: 14px;
+    padding: 14px;    
+    background-color: #ffffff; /* Color blanco */
+    border-radius: 18px; /* Bordes redondeados */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Sombra */
 `;
 
 export default function CheckList() {
@@ -30,13 +35,19 @@ export default function CheckList() {
 
     return (
         <>
-            <NavBar></NavBar>
+            <Navigator></Navigator>
             <MainContainer>
-                <BackgroundGray>
-                    {context?.addProducts.map( product => (
-                        <h5 style={{color: 'white'}}>{product.name}</h5>
-                    ))}
-                </BackgroundGray>     
+                <div style={{display: 'grid', justifyContent: 'center'}}>
+                    <TitlePage>LISTA DE COMPRAS</TitlePage>
+                    <BackgroundGray>
+                        <div>
+                            {context?.addProducts.map( product => (
+                                <h5>{product.name}</h5>
+                            ))}
+                        </div>
+                        <BuyButton>COMPRAR</BuyButton>
+                    </BackgroundGray>     
+                </div>                
             </MainContainer>
            
         </>

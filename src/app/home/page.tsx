@@ -7,6 +7,7 @@ import { ListCategories } from "@/components/ListCategories";
 import { BagCard } from "@/components/BagCard";
 import { PolarisContext } from "@/context/PolarisContext";
 import { useContext } from "react";
+import { Navigator } from "@/containers/Navigator";
 
 
 export default function Home() {
@@ -15,9 +16,7 @@ export default function Home() {
 
     return (
         <>
-            <NavBar></NavBar>
-            {context?.showAccount ? <CardAccount></CardAccount> : <></>}
-            {context?.showBag ? <BagCard></BagCard> : <></>}
+            <Navigator></Navigator>
             <ListCategories></ListCategories>
             <TableProductCards></TableProductCards>
         </>
