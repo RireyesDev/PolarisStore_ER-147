@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { PrimaryBTN, PrimaryButton } from "./PrimaryButton";
 import UserIcon from '/public/icons/user.png'
 import { useRouter } from "next/navigation";
+import { PolarisContext } from "@/context/PolarisContext";
 
 const Card = styled.div`
     position: absolute;
@@ -62,14 +63,22 @@ const IconUser = styled.div`
 
 const CardAccount = () => {
 
+    const context = useContext(PolarisContext);
+
     const router = useRouter();
+
+    function goToMyAccount(){
+        router.push('/my-account')
+        context?.setShowAccount(false);
+    }
+
 
     return(
         <Card>
             <IconUser></IconUser>
             <NameUser>Eduardo Rireyes</NameUser>
             <AccountBtnContainer>
-                <PrimaryButton btnClick={() => {router.push('/my-account')}} btnWidth={240}>MI CUENTA</PrimaryButton>
+                <PrimaryButton btnClick={() => goToMyAccount()} btnWidth={240}>MI CUENTA</PrimaryButton>
             </AccountBtnContainer>
             <LogOutBtnContainer>
                 <PrimaryButton btnClick={() => {router.push('/welcome')}} btnWidth={140}>SALIR</PrimaryButton>

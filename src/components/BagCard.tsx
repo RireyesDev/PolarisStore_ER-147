@@ -63,6 +63,7 @@ const BagCard = () => {
 
     function goToChecklist(){
         router.push('/checklist');
+        context?.setShowBag(false);
     }
 
     return(

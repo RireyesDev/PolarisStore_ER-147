@@ -13,6 +13,14 @@ const MainContainer = styled.main`
     display: grid;    
 `;
 
+const InfoContainer = styled.h3`
+    width: 400px;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    grid-template-rows: repeat(3, 33.33%);
+`;
+
 const GridContainer = styled.div`
     width: 90%;
     display: grid;
