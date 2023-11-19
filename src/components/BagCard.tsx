@@ -5,20 +5,21 @@ import { PrimaryButton } from "./PrimaryButton";
 import { PolarisCard } from "./PolarisCard";
 import { PolarisContext } from "@/context/PolarisContext";
 import { useRouter } from "next/navigation";
-
+import { CardProductInBag } from "./CardProductInBag";
 
 const Card = styled.div`
     position: absolute;
     top: 90px;
     right: 148px;
-    width: 380px;
-    height: 488px;
+    width: 372px;
+    min-height: 488px;
+    height: auto;
     background-color: #ffffff; /* Color blanco */
     border-radius: 18px; /* Bordes redondeados */
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Sombra */
     margin: 14px;
     padding: 10px;
-    padding-bottom: 20px;
+    padding-bottom: 14px;
     /* Configuración de grid */
     display: grid;
     grid-template-columns: 50% 50%;
@@ -41,14 +42,16 @@ const WrapBuyButton = styled(DivWrap)`
 `;
 
 const BackgroundGray = styled.div`
-    display: block;
-    width: 80%;
-    height: 280px;
-    background-color: #d4d0d0;
-    border-radius: 20px;
+    top: 0;
+    width: 90%;
+    min-height: 240px;
+    height: auto;
+    border-radius: 14px;
     grid-column: 1 / 3;
-    place-self: center;
-    padding: 14px;
+    place-self: start center;
+    padding: 8px;
+    margin: 20px 0px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 `;
 
 
@@ -66,11 +69,16 @@ const BagCard = () => {
         <Card>
             <BackgroundGray>
                 {context?.addProducts.map( product => (
-                    <h5 style={{color: 'white'}}>{product.name}</h5>
-                ))}
+                    <CardProductInBag 
+                        productName={product.name}
+                        productPrice={product.price}
+                        productImage={product.image}
+                        productId={product.id}
+                    ></CardProductInBag>
+                ))}                
             </BackgroundGray>
             <WrapPrimaryButton>
-                <PrimaryButton clickButton={() => goToChecklist()}>IR A LISTA DE COMPRAS</PrimaryButton>
+                <PrimaryButton btnClick={() => goToChecklist()}>IR A LISTA DE COMPRAS</PrimaryButton>
             </WrapPrimaryButton>
             <WrapBuyButton>
                 <BuyButton>COMPRAR</BuyButton>

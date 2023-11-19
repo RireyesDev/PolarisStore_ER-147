@@ -7,6 +7,7 @@ import { NavBar } from "@/components/NavBar";
 import { BuyButton } from "@/components/BuyButton";
 import { TitlePage } from "@/components/TitlePage";
 import { Navigator } from "@/containers/Navigator";
+import { CardProductInBag } from "@/components/CardProductInBag";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -42,7 +43,12 @@ export default function CheckList() {
                     <BackgroundGray>
                         <div>
                             {context?.addProducts.map( product => (
-                                <h5>{product.name}</h5>
+                                <CardProductInBag 
+                                    productName={product.name}
+                                    productPrice={product.price}
+                                    productImage={product.image}
+                                    productId={product.id}
+                                ></CardProductInBag>
                             ))}
                         </div>
                         <BuyButton>COMPRAR</BuyButton>
