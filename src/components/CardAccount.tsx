@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { PrimaryBTN, PrimaryButton } from "./PrimaryButton";
-import UserIcon from '/public/icons/user.png'
 import { useRouter } from "next/navigation";
 import { PolarisContext } from "@/context/PolarisContext";
+import { ImageProfile } from "./ImageProfile";
 
 const Card = styled.div`
     position: absolute;
     top: 90px;
-    right: 14px;
+    right: 4%;
     width: 380px;
-    height: 210px;
+    height: 200px;
     background-color: #ffffff; /* Color blanco */
-    border-radius: 18px; /* Bordes redondeados */
+    border-radius: 14px; /* Bordes redondeados */
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Sombra */
     margin: 14px;
     padding: 10px;
@@ -35,8 +35,15 @@ const LogOutBtnContainer = styled.div`
     place-self: end;
 `;
 
+const UserContainer = styled.div`
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    place-self: start;
+`;
+
+
 const NameUser = styled.h3`
-    width: 240px;
+    width: 220px;
     display: grid;
     place-content: center start;
     grid-column: 2 / 3;
@@ -44,20 +51,6 @@ const NameUser = styled.h3`
     place-self: end;
     margin-bottom: 8px;
     font-family: 'Nunito', sans-serif;
-`;
-
-const IconUser = styled.div`
-    width: 88px;
-    height: 88px;
-    background: none;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    border: none;
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    background-image: url(${UserIcon.src});
-    place-self: center;
 `;
 
 
@@ -75,10 +68,12 @@ const CardAccount = () => {
 
     return(
         <Card>
-            <IconUser></IconUser>
+            <UserContainer>
+                <ImageProfile imgSize={92} noCursor></ImageProfile>
+            </UserContainer>            
             <NameUser>Eduardo Rireyes</NameUser>
             <AccountBtnContainer>
-                <PrimaryButton btnClick={() => goToMyAccount()} btnWidth={240}>MI CUENTA</PrimaryButton>
+                <PrimaryButton btnClick={() => goToMyAccount()} btnWidth={220}>MI CUENTA</PrimaryButton>
             </AccountBtnContainer>
             <LogOutBtnContainer>
                 <PrimaryButton btnClick={() => {router.push('/welcome')}} btnWidth={140}>SALIR</PrimaryButton>

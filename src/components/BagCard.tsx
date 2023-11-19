@@ -10,7 +10,7 @@ import { CardProductInBag } from "./CardProductInBag";
 const Card = styled.div`
     position: absolute;
     top: 90px;
-    right: 148px;
+    right: 10%;
     width: 372px;
     min-height: 488px;
     height: auto;

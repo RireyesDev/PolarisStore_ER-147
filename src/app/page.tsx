@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import { GlobalStyles } from './globalStyles'
 import { NavBar } from '@/components/NavBar'
 import { CardAccount } from '@/components/CardAccount'
+import { ImageProfile } from '@/components/ImageProfile'
 
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
     <main className={styles.main}>
       <GlobalStyles/>  
       <NavBar/>
-      <CardAccount></CardAccount>
+      <ImageProfile imgSize={32}  ></ImageProfile>
     </main>
   )
 }

@@ -6,6 +6,7 @@ import UserIcon from '/public/icons/user.png'
 import PolariLogo from '/public/Polaris_Dark.svg'
 import { PolarisContext } from "@/context/PolarisContext";
 import { useRouter } from "next/navigation";
+import { ImageProfile } from "./ImageProfile";
 
 // Create Navbar component styled component, name: NavBar
 const NavContainer = styled.nav`
@@ -103,7 +104,7 @@ const NavBar = (props: any) => {
             <MenuButton onClick={() => clickCategories()}></MenuButton>
             <HomeButton onClick={() => goHome()}></HomeButton>
             <BagButton onClick={() => clickBagCard()}></BagButton>
-            <UserButton onClick={() => clickUserCard()}></UserButton>
+            <ImageProfile imgClick={() => clickUserCard()} imgSize={32}></ImageProfile>
         </NavContainer>
     );
 }
