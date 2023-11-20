@@ -4,6 +4,7 @@ import { TitleCard } from "./TitleCard";
 import { TextBox } from "./TextBox";
 import { DivContainer } from "@/styles/DivContainer";
 import { PrimaryButton } from "./PrimaryButton";
+import { ButtonContainer } from "@/styles/ButtonContainer";
 
 
 
@@ -18,8 +19,12 @@ const CardEditPayment = (props: any) => {
                 <TextBox title="Vencimiento de la tarjeta" placeHolder="MM/AA"></TextBox>
                 <TextBox title="CVC" placeHolder="148"></TextBox>
             </DivContainer>
-            <PrimaryButton>EDITAR</PrimaryButton>
-            <PrimaryButton btnClick={props.exitClick}>SALIR</PrimaryButton>
+            <ButtonContainer>
+                <PrimaryButton btnClick={props.editClick} btnWidth={140}>EDITAR</PrimaryButton>
+            </ButtonContainer>
+            <ButtonContainer>
+                <PrimaryButton btnClick={props.exitClick} btnWidth={140}>SALIR</PrimaryButton>    
+            </ButtonContainer>
         </PolarisCard>
     );
 }

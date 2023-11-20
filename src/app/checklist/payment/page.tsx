@@ -3,13 +3,16 @@ import React from "react";
 import styled from "styled-components";
 import { CardEditPayment } from "@/components/Card_EditPayment";
 import { Navigator } from "@/containers/Navigator";
+import { Main } from "@/containers/Main";
 
 
 export default function Payment() {
-    return(
+    return(      
         <>
             <Navigator></Navigator>
-            <CardEditPayment></CardEditPayment>
+            <Main>
+                <CardEditPayment></CardEditPayment>
+            </Main>
         </>
     );
 }

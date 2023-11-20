@@ -25,6 +25,7 @@ const Card = styled.div`
     grid-template-columns: 50% 50%;
     grid-template-rows: 76% 12% 12%;
     z-index: 4;
+    font-family: 'Nunito';
 `;
 
 
