@@ -4,11 +4,10 @@ import { TitleCard } from "./TitleCard";
 import { TextBox } from "./TextBox";
 import { DivContainer } from "@/styles/DivContainer";
 import { PrimaryButton } from "./PrimaryButton";
-import { SecondaryButton } from "./SecondaryButton";
 
 
 
-const CardEditForm = () => {
+const CardEditForm = (props: any) => {
 
     return(
         <PolarisCard>
@@ -24,7 +23,7 @@ const CardEditForm = () => {
                 <TextBox title="Dirección de Entrega" placeHolder="Km 108, carretera al Atlantico..."></TextBox>
             </DivContainer>
             <PrimaryButton>EDITAR</PrimaryButton>
-            <SecondaryButton>SALIR</SecondaryButton>
+            <PrimaryButton btnClick={props.exitClick}>SALIR</PrimaryButton>
         </PolarisCard>
     );
 }

@@ -4,11 +4,10 @@ import { TitleCard } from "./TitleCard";
 import { TextBox } from "./TextBox";
 import { DivContainer } from "@/styles/DivContainer";
 import { PrimaryButton } from "./PrimaryButton";
-import { SecondaryButton } from "./SecondaryButton";
 
 
 
-const CardEditPayment = () => {
+const CardEditPayment = (props: any) => {
 
     return(
         <PolarisCard>
@@ -20,7 +19,7 @@ const CardEditPayment = () => {
                 <TextBox title="CVC" placeHolder="148"></TextBox>
             </DivContainer>
             <PrimaryButton>EDITAR</PrimaryButton>
-            <SecondaryButton>SALIR</SecondaryButton>
+            <PrimaryButton btnClick={props.exitClick}>SALIR</PrimaryButton>
         </PolarisCard>
     );
 }
