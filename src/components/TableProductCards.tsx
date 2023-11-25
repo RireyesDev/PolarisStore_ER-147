@@ -51,10 +51,7 @@ const TableProductCards = () => {
 
     return(
         <MainContainer>
-             <TableContainer style={{
-                width: `${context?.showCategories ? '80%' : '100%'}`,
-                borderRadius: `${context?.showCategories ? '30px 0px 0px 0px' : '0px'}`,
-             }}>
+             <TableContainer>
                 <TitlePage>PRODUCTOS</TitlePage>
                 {context?.products.map((product, index) => (
                     <Productcard 

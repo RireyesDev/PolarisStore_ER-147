@@ -13,6 +13,7 @@ const Navigator = () => {
     return(
         <>
             <NavBar></NavBar>
+            {context?.showCategories ? <ListCategories></ListCategories> : <></>}
             {context?.showAccount ? <CardAccount></CardAccount> : <></>}
             {context?.showBag ? <BagCard></BagCard> : <></>}
         </>

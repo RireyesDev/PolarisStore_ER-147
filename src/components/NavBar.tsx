@@ -78,6 +78,9 @@ const NavBar = (props: any) => {
         if(context?.showBag === true){
             context?.setShowBag(!context.showBag);
         }
+        if(context?.showCategories === true){
+            context?.setShowCategories(!context.showCategories);
+        }
     }
 
     function clickBagCard(){
@@ -85,12 +88,18 @@ const NavBar = (props: any) => {
         if(context?.showAccount === true){
             context?.setShowAccount(!context.showAccount);
         }
+        if(context?.showCategories === true){
+            context?.setShowCategories(!context.showCategories);
+        }        
     }
 
     function clickCategories(){
         context?.setShowCategories(!context.showCategories);
         if(context?.showAccount === true){
             context?.setShowAccount(!context.showAccount);
+        }
+        if(context?.showBag === true){
+            context?.setShowBag(!context.showBag);
         }
     }
 

@@ -17,7 +17,6 @@ export default function Home() {
     return (
         <>
             <Navigator></Navigator>
-            <ListCategories></ListCategories>
             <TableProductCards></TableProductCards>
         </>
     );

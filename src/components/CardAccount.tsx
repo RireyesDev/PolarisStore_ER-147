@@ -8,13 +8,12 @@ import { ImageProfile } from "./ImageProfile";
 const Card = styled.div`
     position: absolute;
     top: 90px;
-    right: 4%;
+    right: 5%;
     width: 380px;
     height: 200px;
     background-color: #ffffff; /* Color blanco */
-    border-radius: 14px; /* Bordes redondeados */
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Sombra */
-    margin: 14px;
+    border-radius:  0px 0px 14px 14px; /* Bordes redondeados */
+    box-shadow: rgba(0, 0, 0, 0.208) 4px 4px 4px 0px;
     padding: 10px;
     /* Configuración de grid */
     display: grid;

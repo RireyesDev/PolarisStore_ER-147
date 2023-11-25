@@ -1,61 +1,74 @@
 import React from "react";
 import styled from "styled-components";
+import { categories } from "@/database/categories";
+import { useRouter } from "next/navigation";
 
 const ContainerCategories = styled.div`
     position: absolute;
-    top: 90px;
-    left: 14px;
-    width: 20%;
-    height: 98vh;
-    padding: 10px;
-    /* Configuración de grid */
+    top: 80px;
+    left: 0px;
+    width: 308px;
+    height: 738px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: start;
-    
-    z-index: 1;
+    background-color: white;    
+    z-index: 4;
+    border-radius: 0px 0px 30px 0px;
+    box-shadow: rgba(0, 0, 0, 0.208) 4px 4px 4px 0px;
 `;
 
 const Title = styled.h2`
-    width: 100%;
+    width: 86%;
     height: 48px;
     background-color: white;
     font-family: 'Nunito', sans-serif;
-    margin: 40px 0px;
+    margin: 34px 0px;
+    align-self: center;
 `;
 
 const ButtonCategory = styled.button`
-    width: 160px;
+    width: 100%;
     height: 48px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin: 10px 0px;
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 1px;
     background-color: white;
+    text-align: left;
+    padding-left: 68px;
+    white-space: nowrap;
+
     &:hover {
-        background-color: #45a049;
+        background-color: rgb(216, 216, 216);
     }
 
     &:active {
-        background-color: #388e3c; /* Puedes ajustar el color del estado activo aquí */
+        background-color: rgb(185, 185, 185);
     }
 `;
 
 const ListCategories = () => {
 
-    const exampleArray =  [1, 2, 3, 4, 5, 6, 7, ' Todas'];
+    const router = useRouter();
 
     return(
         <ContainerCategories>
             <Title>CATEGORIAS</Title>
-            {exampleArray.map(button => (
-                <ButtonCategory key={button}>Categoria {button}</ButtonCategory>
-            ))}
+            {categories.map((button, index) => {
+
+                const path = button
+                    .toLowerCase() // Convertir texto a minúsculas
+                    .replace(/\s+/g, '-') // Reemplazar espacios con guiones
+                    .normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Eliminar tildes
+
+                return(
+                    <ButtonCategory key={index} onClick={() => router.push(`/categories/${path}`)}>{button}</ButtonCategory>
+                );
+            })}
         </ContainerCategories>               
     );
 }
