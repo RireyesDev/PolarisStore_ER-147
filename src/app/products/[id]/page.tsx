@@ -8,6 +8,8 @@ import { BuyButton } from "@/components/BuyButton";
 import { PolarisCard } from "@/components/PolarisCard";
 import { useContext } from "react";
 import { PolarisContext } from "@/context/PolarisContext";
+import { Navigator } from "@/containers/Navigator";
+import { useRouter } from "next/navigation";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -56,6 +58,9 @@ const TitleProduct = styled.h3`
     grid-row: 1 / 2;
     margin-left: 10px;
     font-family: 'Nunito', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;    
+    text-overflow: ellipsis;
 `;
 
 const PriceProduct = styled.h3`
@@ -103,16 +108,28 @@ export default function Products({params}: {params: { id: number}}) {
     const context = useContext(PolarisContext);
 
     const theProduct = {
+        id: context?.products[params.id - 1].id, 
         image: context?.products[params.id - 1].image, 
         name: context?.products[params.id - 1].name,
         price: context?.products[params.id - 1].price,
         description: context?.products[params.id - 1].description,
         categories: context?.products[params.id - 1].categories,
     }
+
+    const router = useRouter();
+
+    function buyProduct(id: number){
+        
+        context?.setAddProducts(prevProducts => {
+            return [...prevProducts, context?.products[id - 1]];
+        });   
+        
+        context?.setShowBag(true);
+    }
     
     return (
         <>
-            <NavBar></NavBar>
+            <Navigator></Navigator>
             <MainContainer>
                 <Container>                    
                     <ContainerProduct>
@@ -123,7 +140,7 @@ export default function Products({params}: {params: { id: number}}) {
                         <CategoryProduct>Categories</CategoryProduct>
                     </ContainerProduct>
                     <ContainerButtons>
-                        <PrimaryButton>AGREGAR A LA BOLSA</PrimaryButton>
+                        <PrimaryButton btnClick={() => buyProduct(theProduct.id)}>AGREGAR A LA BOLSA</PrimaryButton>
                         <BuyButton>COMPRAR</BuyButton>
                     </ContainerButtons>
                 </Container>

@@ -1,14 +1,33 @@
 import React from "react";
+import styled from "styled-components";
 import { PolarisCard } from "./PolarisCard";
 import { TitleCard } from "./TitleCard";
 import { TextBox } from "./TextBox";
 import { DivContainer } from "@/styles/DivContainer";
 import { PrimaryButton } from "./PrimaryButton";
-import { SecondaryButton } from "./SecondaryButton";
+import { useRouter } from "next/navigation";
+import { ButtonContainer } from "@/styles/ButtonContainer";
 
 
+const BtnContainer1 = styled.div`
+    width: 100%;
+    display: grid;
+    place-self: center;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+`;
 
-const CardEditAccount = () => {
+const btnContainer2 = styled.div`
+    width: 100%;
+    display: grid;
+    place-self: center;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+` 
+
+const CardEditAccount = (props: any) => {
+
+    const router = useRouter();
 
     return(
         <PolarisCard>
@@ -21,8 +40,15 @@ const CardEditAccount = () => {
                 <TextBox title="Repetir Contraseña" placeHolder="*****************" type="password"></TextBox>
                 <TextBox title="Pais" placeHolder="Argentina"></TextBox>            
             </DivContainer>
-            <PrimaryButton>EDITAR</PrimaryButton>
-            <SecondaryButton>SALIR</SecondaryButton>
+
+            <ButtonContainer>
+                <PrimaryButton btnClick={props.editClick} btnWidth={140}>EDITAR</PrimaryButton>
+            </ButtonContainer>
+
+            <ButtonContainer>
+                <PrimaryButton btnClick={props.exitClick} btnWidth={140}>SALIR</PrimaryButton>
+            </ButtonContainer>
+            
         </PolarisCard>
     );
 }

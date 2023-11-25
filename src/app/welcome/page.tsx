@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 
 const ContainerPage = styled.div`
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 50%); 
     align-items: center;
@@ -34,8 +34,8 @@ const PrimaryBackground = styled.section`
 `;
 
 const PolarisLogo = styled(Image)`
-    width: 280px;
-    height: 160px;
+    width: 300px;
+    height: 200px;
     align-self: left;
 `;
 
@@ -44,12 +44,10 @@ const SecondBackground = styled(PrimaryBackground)`
     background-image: url(${Product2.src});
     display: grid;
     place-content: center;
+    padding: 0;
 `;
 
-const ContainerCard = styled.section`
-    width: 100%;
-    height: 100%;
-`;
+
 
 const WelcomeText = styled.h1`
     width: 100%;
@@ -65,8 +63,7 @@ const WelcomeText = styled.h1`
 export default function Welcome() {
 
     const router = useRouter();
-
-    const StoreDescription = "Obten la mejor experiencia y compra los mejores productos";
+    const StoreDescription = "Obten la mejor experiencia y compra los mejores productos.";
 
     return (
         <ContainerPage>
@@ -75,13 +72,8 @@ export default function Welcome() {
                 <WelcomeText>{StoreDescription}</WelcomeText>
             </PrimaryBackground>
 
-            <SecondBackground>
-                <ContainerCard>
-                    <CardLogIn 
-                        clickPrimaryAction={() => router.push('/home')} 
-                        clickSecondaryAction={() => router.push('/signin')}
-                    />
-                </ContainerCard>
+            <SecondBackground>                
+                <CardLogIn/>                
             </SecondBackground>
         </ContainerPage>
     );

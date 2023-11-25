@@ -1,3 +1,4 @@
+'use client';
 import { createContext } from "react";
 
 type Products = {
@@ -18,9 +19,12 @@ type PolarisContextType = {
     setShowCategories: React.Dispatch<React.SetStateAction<boolean>>;    
     products: Products[];
     setProducts: React.Dispatch<React.SetStateAction<Products[]>>;
+    addProducts: Products[];
+    setAddProducts: React.Dispatch<React.SetStateAction<Products[]>>;
 }
 
 const PolarisContext = createContext<PolarisContextType | undefined>(undefined);
 
 export { PolarisContext };
 export type { PolarisContextType };
+export type { Products };

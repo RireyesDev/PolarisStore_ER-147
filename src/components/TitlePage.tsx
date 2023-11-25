@@ -7,7 +7,7 @@ const TitleContainer = styled.h2`
     display: grid;
     place-content: center;
     font-weight: bold;
-    margin-top: 140px;
+    margin-top: 100px;
     margin-bottom: 40px; 
     letter-spacing: 3px;
     font-size: 32px;

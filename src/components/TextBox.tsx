@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 const Container = styled.div`
     width: 90%;
-    height: 100px;
+    height: 78px;
     display: grid;
     grid-template-rows: 40% 60%;
-
+    margin: 6px 0px;
 `;
 
 const Title = styled.h3`
@@ -19,7 +19,7 @@ const Title = styled.h3`
 
 const InputText = styled.input`
     width: var(--size-button-textBox);
-    height: 42px;
+    height: 38px;
     align-self: center;
     justify-self: center;
     border-radius: 50px;

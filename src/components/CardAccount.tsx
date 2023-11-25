@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-import { PrimaryBTN } from "./PrimaryButton";
-import UserIcon from '/public/icons/user.png'
+import { PrimaryBTN, PrimaryButton } from "./PrimaryButton";
 import { useRouter } from "next/navigation";
+import { PolarisContext } from "@/context/PolarisContext";
+import { ImageProfile } from "./ImageProfile";
 
 const Card = styled.div`
     position: absolute;
     top: 90px;
-    right: 14px;
+    right: 4%;
     width: 380px;
-    height: 210px;
+    height: 200px;
     background-color: #ffffff; /* Color blanco */
-    border-radius: 18px; /* Bordes redondeados */
+    border-radius: 14px; /* Bordes redondeados */
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Sombra */
     margin: 14px;
     padding: 10px;
@@ -22,22 +23,27 @@ const Card = styled.div`
     z-index: 3;
 `;
 
-const AccountButton = styled(PrimaryBTN)`
-    width: 240px;
+const AccountBtnContainer = styled.div`    
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     place-self: center end;
 `;
 
-const LogOutButton = styled(PrimaryBTN)`
-    width: 140px;
+const LogOutBtnContainer = styled.div`
     grid-column: 2 / 3;
     grid-row: 3 / 4;
     place-self: end;
 `;
 
+const UserContainer = styled.div`
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    place-self: start;
+`;
+
+
 const NameUser = styled.h3`
-    width: 240px;
+    width: 220px;
     display: grid;
     place-content: center start;
     grid-column: 2 / 3;
@@ -47,31 +53,31 @@ const NameUser = styled.h3`
     font-family: 'Nunito', sans-serif;
 `;
 
-const IconUser = styled.div`
-    width: 88px;
-    height: 88px;
-    background: none;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    border: none;
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    background-image: url(${UserIcon.src});
-    place-self: center;
-`;
-
 
 const CardAccount = () => {
 
+    const context = useContext(PolarisContext);
+
     const router = useRouter();
+
+    function goToMyAccount(){
+        router.push('/my-account')
+        context?.setShowAccount(false);
+    }
+
 
     return(
         <Card>
-            <IconUser></IconUser>
+            <UserContainer>
+                <ImageProfile imgSize={92} noCursor></ImageProfile>
+            </UserContainer>            
             <NameUser>Eduardo Rireyes</NameUser>
-            <AccountButton onClick={() => {router.push('/my-account')}}>MI CUENTA</AccountButton>
-            <LogOutButton onClick={() => {router.push('/welcome')}}>SALIR</LogOutButton>
+            <AccountBtnContainer>
+                <PrimaryButton btnClick={() => goToMyAccount()} btnWidth={220}>MI CUENTA</PrimaryButton>
+            </AccountBtnContainer>
+            <LogOutBtnContainer>
+                <PrimaryButton btnClick={() => {router.push('/welcome')}} btnWidth={140}>SALIR</PrimaryButton>
+            </LogOutBtnContainer>
         </Card>
     );
 }

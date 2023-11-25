@@ -1,18 +1,19 @@
 import React from "react";
+import styled from "styled-components";
 import { PolarisCard } from "./PolarisCard";
 import { TitleCard } from "./TitleCard";
 import { TextBox } from "./TextBox";
 import { DivContainer } from "@/styles/DivContainer";
 import { PrimaryButton } from "./PrimaryButton";
-import { SecondaryButton } from "./SecondaryButton";
+import { ButtonContainer } from "@/styles/ButtonContainer";
 
 
 
-const CardEditForm = () => {
+const CardEditForm = (props: any) => {
 
     return(
         <PolarisCard>
-            <TitleCard title="Editar Formulario de Facturación"></TitleCard>
+            <TitleCard title="Formulario de Facturación"></TitleCard>
             <DivContainer>
                 <TextBox title="Nombre" placeHolder="Jonh"></TextBox>
                 <TextBox title="Apellido" placeHolder="Wick"></TextBox>
@@ -23,8 +24,12 @@ const CardEditForm = () => {
                 <TextBox title="Código Postal" placeHolder="0101 4536"></TextBox>
                 <TextBox title="Dirección de Entrega" placeHolder="Km 108, carretera al Atlantico..."></TextBox>
             </DivContainer>
-            <PrimaryButton>EDITAR</PrimaryButton>
-            <SecondaryButton>SALIR</SecondaryButton>
+            <ButtonContainer>
+                <PrimaryButton btnClick={props.editClick} btnWidth={140}>EDITAR</PrimaryButton>
+            </ButtonContainer>
+            <ButtonContainer>
+                <PrimaryButton btnClick={props.exitClick} btnWidth={140}>SALIR</PrimaryButton>
+            </ButtonContainer>
         </PolarisCard>
     );
 }

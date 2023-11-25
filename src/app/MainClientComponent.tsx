@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { PolarisContext } from "@/context/PolarisContext"
 import type { PolarisContextType } from '@/context/PolarisContext'
 import { productsMain } from "@/database/products"
+import { Products } from "@/context/PolarisContext"
 
 
 export default function MainClientComponent(props: any) {
@@ -12,6 +13,7 @@ export default function MainClientComponent(props: any) {
     const [showCategories, setShowCategories] = useState<boolean>(false);
 
     const [products, setProducts] = useState(productsMain);
+    const [addProducts, setAddProducts] = useState<Products[]>([]);
 
 
 
@@ -24,6 +26,8 @@ export default function MainClientComponent(props: any) {
       setShowCategories,
       products,
       setProducts,
+      addProducts,
+      setAddProducts,
     }
 
     return(        

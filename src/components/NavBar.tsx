@@ -6,6 +6,7 @@ import UserIcon from '/public/icons/user.png'
 import PolariLogo from '/public/Polaris_Dark.svg'
 import { PolarisContext } from "@/context/PolarisContext";
 import { useRouter } from "next/navigation";
+import { ImageProfile } from "./ImageProfile";
 
 // Create Navbar component styled component, name: NavBar
 const NavContainer = styled.nav`
@@ -17,7 +18,7 @@ const NavContainer = styled.nav`
     grid-template-columns: 10% 20% 50% 10% 10%;
     grid-template-rows: 100%;
     place-items: center;
-    border-bottom: 1px solid var(--light-color);
+    border-bottom: 1px solid var(--dark-color);
     z-index: 5;
 `;
 
@@ -40,6 +41,8 @@ const TheButton = styled.button`
 const MenuButton = styled(TheButton)`   
     grid-column: 1 / 2;    
     background-image: url(${MenuIcon.src});
+    justify-self: right;
+    margin-right: 18%;
 `;
 
 const HomeButton = styled(TheButton)`
@@ -47,16 +50,23 @@ const HomeButton = styled(TheButton)`
     height: 60px;
     grid-column: 2 / 3;   
     background-image: url(${PolariLogo.src});
+    justify-self: left;
+    margin-left: 16%;
 `;
 
 const BagButton = styled(TheButton)` 
     grid-column: 4 / 5;  
     background-image: url(${BagIcon.src});
+    justify-self: right;
+    margin-right: 18%;
 `;
 
-const UserButton = styled(TheButton)`   
+const UserContainer = styled.div`   
     grid-column: 5 / 6;
-    background-image: url(${UserIcon.src});
+    justify-self: left;
+    margin-left: 18%;
+    display: grid;
+    place-content: center;
 `;
 
 const NavBar = (props: any) => {
@@ -95,7 +105,9 @@ const NavBar = (props: any) => {
             <MenuButton onClick={() => clickCategories()}></MenuButton>
             <HomeButton onClick={() => goHome()}></HomeButton>
             <BagButton onClick={() => clickBagCard()}></BagButton>
-            <UserButton onClick={() => clickUserCard()}></UserButton>
+            <UserContainer>
+                <ImageProfile imgClick={() => clickUserCard()} imgSize={32}></ImageProfile>
+            </UserContainer>
         </NavContainer>
     );
 }

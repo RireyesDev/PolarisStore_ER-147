@@ -5,7 +5,8 @@ import { TitleCard } from "./TitleCard";
 import { TextBox } from "./TextBox";
 import { DivContainer } from "@/styles/DivContainer";
 import { PrimaryButton } from "./PrimaryButton";
-import { SecondaryButton } from "./SecondaryButton";
+import { useRouter } from "next/navigation";
+import { ButtonContainer } from "@/styles/ButtonContainer";
 
 const ForgotText = styled.h4`
     width: var(--size-button-textBox);
@@ -14,7 +15,19 @@ const ForgotText = styled.h4`
     color: var(--primary-color);   
 `;
 
+const ContainerButton = styled.div`
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    
+`;
+
 const CardLogIn = (props: any) => {
+
+    const router = useRouter();
 
     return(
         <PolarisCard>
@@ -24,8 +37,10 @@ const CardLogIn = (props: any) => {
                 <TextBox title="Contraseña" placeHolder="*****************"></TextBox>
                 <ForgotText>Olvide mi contrasesña</ForgotText>
             </DivContainer>
-            <PrimaryButton clickButton={props.clickPrimaryAction}>INICIAR</PrimaryButton>
-            <SecondaryButton clickButton={props.clickSecondaryAction}>REGISTRATE</SecondaryButton>
+            <ContainerButton>
+                <PrimaryButton btnClick={() => router.push('/home')} btnWidth={280}>INICIAR</PrimaryButton>
+                <PrimaryButton btnClick={() => router.push('/signin')} btnWidth={280}>REGISTRATE</PrimaryButton>                
+            </ContainerButton>
         </PolarisCard>
     );
 }

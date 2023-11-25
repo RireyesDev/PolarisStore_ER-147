@@ -14,9 +14,8 @@ const MainContainer = styled.main`
 `;
 
 const TableContainer = styled.section`
-    width: 78%;
-    border-radius: 30px 0px 0px 0px;
-    box-shadow: -14px 6px 29px 0px rgba(0,0,0,0.2);
+    width: 100%;
+    box-shadow: -12px 12px 14px 0px rgba(0,0,0,0.24);
 
 
     min-height: 320px;
@@ -41,6 +40,15 @@ const TableProductCards = () => {
         router.push(`/products/${id}`);
     }
 
+    function buyProduct(id: number){
+        
+        context?.setAddProducts(prevProducts => {
+            return [...prevProducts, context?.products[id - 1]];
+        });   
+        
+        context?.setShowBag(true);
+    }
+
     return(
         <MainContainer>
              <TableContainer style={{
@@ -55,6 +63,7 @@ const TableProductCards = () => {
                         price={product.price}
                         name={product.name}
                         viewProduct={() => goToProduct(product.id)}
+                        clickBuyProduct={() => buyProduct(product.id)}
                     ></Productcard>    
                 ))}
             </TableContainer>

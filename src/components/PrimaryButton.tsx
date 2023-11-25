@@ -23,8 +23,14 @@ const PrimaryBTN = styled.button`
 
 
 const PrimaryButton = (props: any) => {
+    
     return(
-        <PrimaryBTN onClick={props.clickButton}>{props.children}</PrimaryBTN>
+        <PrimaryBTN 
+            onClick={props.btnClick}
+            style={{
+                width: `${props.btnWidth}px`,
+            }}
+        >{props.children}</PrimaryBTN>
     );
 }
 
