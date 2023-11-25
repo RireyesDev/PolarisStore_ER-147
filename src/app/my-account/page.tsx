@@ -23,8 +23,7 @@ const InfoContainer = styled.section`
     height: 100px;
     display: grid;
     grid-template-columns: 20% 40% 40%;
-    grid-template-rows: repeat(3, 33.33%);        
-    padding: 10px;  
+    grid-template-rows: repeat(3, 33.33%);      
     margin-top: 40px;
 `;
 
@@ -56,7 +55,6 @@ const CardSection = styled.div`
     grid-template-columns: 20% 40% 40%;
     grid-template-rows: repeat(3, 33.33%);
     border-radius: 10px;
-    padding: 10px;  
     margin-top: 40px;
 `;
 
@@ -146,7 +144,7 @@ export default function Welcome() {
                 <GridContainer>
                     <InfoContainer>
                         <ImageProfileContainer>
-                            <ImageProfile imgSize={62}></ImageProfile>
+                            <ImageProfile imgSize={100} noCursor></ImageProfile>
                         </ImageProfileContainer>                        
                         <NameProfile>Eduardo Rireyes</NameProfile>
                         <EmailProfile>exmple2024@gmail.com</EmailProfile>

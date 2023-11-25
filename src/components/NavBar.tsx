@@ -61,11 +61,12 @@ const BagButton = styled(TheButton)`
     margin-right: 18%;
 `;
 
-const UserButton = styled(TheButton)`   
+const UserContainer = styled.div`   
     grid-column: 5 / 6;
-    background-image: url(${UserIcon.src});
     justify-self: left;
     margin-left: 18%;
+    display: grid;
+    place-content: center;
 `;
 
 const NavBar = (props: any) => {
@@ -104,7 +105,9 @@ const NavBar = (props: any) => {
             <MenuButton onClick={() => clickCategories()}></MenuButton>
             <HomeButton onClick={() => goHome()}></HomeButton>
             <BagButton onClick={() => clickBagCard()}></BagButton>
-            <ImageProfile imgClick={() => clickUserCard()} imgSize={32}></ImageProfile>
+            <UserContainer>
+                <ImageProfile imgClick={() => clickUserCard()} imgSize={32}></ImageProfile>
+            </UserContainer>
         </NavContainer>
     );
 }

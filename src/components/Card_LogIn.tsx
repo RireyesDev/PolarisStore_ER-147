@@ -6,12 +6,23 @@ import { TextBox } from "./TextBox";
 import { DivContainer } from "@/styles/DivContainer";
 import { PrimaryButton } from "./PrimaryButton";
 import { useRouter } from "next/navigation";
+import { ButtonContainer } from "@/styles/ButtonContainer";
 
 const ForgotText = styled.h4`
     width: var(--size-button-textBox);
     height: 32px;
     font-size: 12px;
     color: var(--primary-color);   
+`;
+
+const ContainerButton = styled.div`
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    
 `;
 
 const CardLogIn = (props: any) => {
@@ -26,8 +37,10 @@ const CardLogIn = (props: any) => {
                 <TextBox title="Contraseña" placeHolder="*****************"></TextBox>
                 <ForgotText>Olvide mi contrasesña</ForgotText>
             </DivContainer>
-            <PrimaryButton btnClick={() => router.push('/home')} btnWidth={280}>INICIAR</PrimaryButton>
-            <PrimaryButton btnClick={() => router.push('/signin')} btnWidth={280}>REGISTRATE</PrimaryButton>
+            <ContainerButton>
+                <PrimaryButton btnClick={() => router.push('/home')} btnWidth={280}>INICIAR</PrimaryButton>
+                <PrimaryButton btnClick={() => router.push('/signin')} btnWidth={280}>REGISTRATE</PrimaryButton>                
+            </ContainerButton>
         </PolarisCard>
     );
 }

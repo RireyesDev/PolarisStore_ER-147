@@ -6,13 +6,13 @@ import AddBagIcon from '/public/icons/add-bag.png'
 
 const Container = styled.div`
   display: grid;
-  width: 248px;
-  height: 292px;  
+  width: 208px;
+  height: 240px;  
   grid-template-columns: 70% 30%;
-  grid-template-rows: 72% 14% 14%;
+  grid-template-rows: 70% 15% 15%;
   background-color: #ffffff; /* Fondo blanco */
   border-radius: 20px; /* Bordes redondeados */
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); /* Sombra */
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Sombra */
   margin: 20px;
   transition: transform 0.4s ease;
 
@@ -49,11 +49,13 @@ const TextContainer = `
 
 const Price = styled.h3`   
     ${TextContainer}
+    font-size: 16px;
     font-weight: bold;    
 `;
 
 const Name = styled.h4`
     ${TextContainer}
+    font-size: 14px;
     font-weight: normal;    
     align-content: start;    
     text-overflow: ellipsis;
@@ -70,8 +72,8 @@ const IconSpan = styled.span`
 `;
 
 const BuyButton = styled.button`
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-content: center;
   grid-column: 2;

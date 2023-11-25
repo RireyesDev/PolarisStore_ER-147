@@ -15,7 +15,7 @@ const MainContainer = styled.main`
 
 const TableContainer = styled.section`
     width: 100%;
-    box-shadow: -12px 12px 14px 0px rgba(0,0,0,0.44);
+    box-shadow: -12px 12px 14px 0px rgba(0,0,0,0.24);
 
 
     min-height: 320px;

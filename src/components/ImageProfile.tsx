@@ -5,7 +5,6 @@ import styled from 'styled-components';
 const UserImage = styled.button`   
     grid-column: 5 / 6;
     justify-self: left;
-    margin-left: 18%;
 
     background: none;
     background-repeat: no-repeat;

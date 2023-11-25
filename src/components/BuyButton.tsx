@@ -18,7 +18,7 @@ const BuyBTN = styled(PrimaryBTN)`
 
 const BuyButton = (props: any) => {
     return(
-        <BuyBTN onClick={() => console.log("Comprando...")}>{props.children}</BuyBTN>
+        <BuyBTN onClick={props.btnClick}>{props.children}</BuyBTN>
     );
 }
 

@@ -21,7 +21,7 @@ const CardLight = styled(Card)`
     display: grid;
     grid-row: 2 / 3;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 68px auto 72px;
+    grid-template-rows: 68px auto auto;
     background-color: var(--light-color);
     border-radius: 78px 0px 22px 22px;
     padding: 24px 10px;
