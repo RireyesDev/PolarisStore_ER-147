@@ -143,10 +143,11 @@ export default function Products({params}: {params: { id: number}}) {
     const router = useRouter();
 
     function buyProduct(id: number){
-        
-        context?.setAddProducts(prevProducts => {
-            return [...prevProducts, context?.products[id - 1]];
-        });   
+        if (theProduct.id !== undefined) {
+            context?.setAddProducts(prevProducts => {
+                return [...prevProducts, context?.products[id - 1]];
+            });   
+        }
         
         context?.setShowBag(true);
     }
@@ -157,17 +158,17 @@ export default function Products({params}: {params: { id: number}}) {
             <MainContainer>
                 <Container>                    
                     <ContainerProduct>
-                        <ImageContainer src={theProduct.image} alt={theProduct.name} width={700} height={700}></ImageContainer>
-                        <TitleProduct>{theProduct.name}</TitleProduct>
-                        <PriceProduct>{theProduct.price}</PriceProduct>
-                        <DescriptionProduct>{theProduct.description}</DescriptionProduct>
+                        <ImageContainer src={theProduct.image ?? ''} alt={theProduct.name ?? ''} width={700} height={700}></ImageContainer>
+                        <TitleProduct>{theProduct.name ?? ''}</TitleProduct>
+                        <PriceProduct>{theProduct.price ?? ''}</PriceProduct>
+                        <DescriptionProduct>{theProduct.description ?? ''}</DescriptionProduct>
                         <CategoryProduct>Categories</CategoryProduct>
                         <ContainerCategories>{theProduct.categories?.map((category, index) => (
                             <CategoryH4 key={index}>{category}</CategoryH4>
                         ))}</ContainerCategories>
                     </ContainerProduct>
                     <ContainerButtons>
-                        <PrimaryButton btnWidth={220} btnClick={() => buyProduct(theProduct.id)}>AGREGAR A LA BOLSA</PrimaryButton>
+                        <PrimaryButton btnWidth={220} btnClick={() => buyProduct(theProduct?.id ?? 0)}>AGREGAR A LA BOLSA</PrimaryButton>
                         <BuyButton btnWidth={220}>COMPRAR</BuyButton>
                     </ContainerButtons>
                 </Container>
