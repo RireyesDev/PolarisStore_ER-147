@@ -6,7 +6,6 @@ import Image from "next/image";
 import PolarisLight from "/public/Polaris_Light.svg";
 import Product1 from "/public/product_microfone1.jpg";
 import Product2 from "/public/product_microfone2.jpg";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 

@@ -1,15 +1,13 @@
 'use client'
 import styled from "styled-components";
 import Image from "next/image";
-import productExample from '/public/images/product_example.jpg'
 import { PrimaryButton } from "@/components/PrimaryButton"
-import { NavBar } from "@/components/NavBar";
 import { BuyButton } from "@/components/BuyButton";
-import { PolarisCard } from "@/components/PolarisCard";
 import { useContext } from "react";
 import { PolarisContext } from "@/context/PolarisContext";
 import { Navigator } from "@/containers/Navigator";
 import { useRouter } from "next/navigation";
+import { Footer } from "@/containers/Footer";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -19,37 +17,39 @@ const MainContainer = styled.main`
     display: grid;    
 `;
 
-const Container = styled.div`
+const Container = styled.section`
     width: 76%;
     min-width: 840px;
-    height: 380px;
+    height: 400px;
     place-self: center;
     display: grid;
     grid-template-columns: 30% 70%;
     grid-template-rows: 70% 30%;
-`;
+    `;
 
-const ImageContainer = styled(Image)`
-    width: 240px;
-    height: 240px;  
-    overflow: hidden;
-    object-fit: cover;
-    grid-column: 1 / 2;
-    grid-row: 1 / 4;
-    border-radius: 20px;
-    place-self: start center;
-`;
-
-
-const ContainerProduct = styled.div`
+const ContainerProduct = styled.section`
     width: 100%;
+    min-width: 840px;
     height: 100%;
     grid-column: 1 / 3;
     grid-row: 1 / 2;
     display: grid;
-    grid-template-columns: 30% 55% 15%;
-    grid-template-rows: 20% 50% 30%;
+    grid-template-columns: 35% 50% 15%;
+    grid-template-rows: 20% 50% 10% 20%;
 `;
+
+const ImageContainer = styled(Image)`
+    width: 268px;
+    height: 268px;  
+    overflow: hidden;
+    object-fit: cover;
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+    border-radius: 20px;
+    place-self: center start;
+`;
+
+
 
 const TitleProduct = styled.h3`
     font-size: 20px;
@@ -101,6 +101,30 @@ const ContainerButtons = styled.div`
     display: flex;
     align-items: end;
     justify-content: end;
+    gap: 30px;
+`;
+
+const ContainerCategories = styled.div`
+    width: 92%;    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    grid-column: 2 / 3;
+    justify-self: right;
+`;
+
+const CategoryH4 = styled.h4`
+  width: auto;
+  height: 34px;
+  border-radius: 50px;
+  background-color: #e0bf00;
+  color: white;
+  display: grid;
+  place-content: center;
+  align-self: end;
+  padding: 0 20px;
+  white-space: nowrap;
 `;
 
 export default function Products({params}: {params: { id: number}}) {
@@ -138,13 +162,17 @@ export default function Products({params}: {params: { id: number}}) {
                         <PriceProduct>{theProduct.price}</PriceProduct>
                         <DescriptionProduct>{theProduct.description}</DescriptionProduct>
                         <CategoryProduct>Categories</CategoryProduct>
+                        <ContainerCategories>{theProduct.categories?.map((category, index) => (
+                            <CategoryH4 key={index}>{category}</CategoryH4>
+                        ))}</ContainerCategories>
                     </ContainerProduct>
                     <ContainerButtons>
-                        <PrimaryButton btnClick={() => buyProduct(theProduct.id)}>AGREGAR A LA BOLSA</PrimaryButton>
-                        <BuyButton>COMPRAR</BuyButton>
+                        <PrimaryButton btnWidth={220} btnClick={() => buyProduct(theProduct.id)}>AGREGAR A LA BOLSA</PrimaryButton>
+                        <BuyButton btnWidth={220}>COMPRAR</BuyButton>
                     </ContainerButtons>
                 </Container>
             </MainContainer>
+            <Footer></Footer>
         </>
     );
 }

@@ -2,22 +2,20 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { BuyButton } from "./BuyButton";
 import { PrimaryButton } from "./PrimaryButton";
-import { PolarisCard } from "./PolarisCard";
 import { PolarisContext } from "@/context/PolarisContext";
 import { useRouter } from "next/navigation";
 import { CardProductInBag } from "./CardProductInBag";
 
 const Card = styled.div`
     position: absolute;
-    top: 90px;
-    right: 10%;
+    top: 80px;
+    right: 12%;
     width: 372px;
     min-height: 488px;
     height: auto;
     background-color: #ffffff; /* Color blanco */
-    border-radius: 18px; /* Bordes redondeados */
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Sombra */
-    margin: 14px;
+    border-radius: 0px 0px 30px 30px;
+    box-shadow: rgba(0, 0, 0, 0.208) 4px 4px 4px 0px;
     padding: 10px;
     padding-bottom: 14px;
     /* Configuración de grid */
@@ -67,11 +65,17 @@ const BagCard = () => {
         context?.setShowBag(false);
     }
 
+    function goToPayment(){
+        router.push('/checklist/billing');
+        context?.setShowBag(false);
+    }
+
     return(
         <Card>
             <BackgroundGray>
-                {context?.addProducts.map( product => (
+                {context?.addProducts.map( (product, index) => (
                     <CardProductInBag 
+                        key={index}
                         productName={product.name}
                         productPrice={product.price}
                         productImage={product.image}
@@ -83,7 +87,7 @@ const BagCard = () => {
                 <PrimaryButton btnClick={() => goToChecklist()}>IR A LISTA DE COMPRAS</PrimaryButton>
             </WrapPrimaryButton>
             <WrapBuyButton>
-                <BuyButton>COMPRAR</BuyButton>
+                <BuyButton btnClick={() => goToPayment()}>COMPRAR</BuyButton>
             </WrapBuyButton>            
         </Card>
     );

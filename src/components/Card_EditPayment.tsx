@@ -5,10 +5,14 @@ import { TextBox } from "./TextBox";
 import { DivContainer } from "@/styles/DivContainer";
 import { PrimaryButton } from "./PrimaryButton";
 import { ButtonContainer } from "@/styles/ButtonContainer";
+import { BuyButton } from "./BuyButton";
+import { useRouter } from "../../node_modules/next/navigation";
 
 
 
 const CardEditPayment = (props: any) => {
+
+    const router = useRouter();
 
     return(
         <PolarisCard>
@@ -20,7 +24,10 @@ const CardEditPayment = (props: any) => {
                 <TextBox title="CVC" placeHolder="148"></TextBox>
             </DivContainer>
             <ButtonContainer>
-                <PrimaryButton btnClick={props.editClick} btnWidth={140}>EDITAR</PrimaryButton>
+                {props.typeButton === 'payment' ? 
+                    <BuyButton btnClick={() => router.push('/checklist/buy-product')} btnWidth={140}>COMPRAR</BuyButton> : 
+                    <PrimaryButton btnClick={props.saveClick} btnWidth={140}>EDITAR</PrimaryButton>
+                }
             </ButtonContainer>
             <ButtonContainer>
                 <PrimaryButton btnClick={props.exitClick} btnWidth={140}>SALIR</PrimaryButton>    

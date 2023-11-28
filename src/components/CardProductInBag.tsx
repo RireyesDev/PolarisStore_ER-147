@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import exampleImage from '/public/images/product_example.jpg';
 
 const ContainerSmall = styled.div`
     width: 100%;

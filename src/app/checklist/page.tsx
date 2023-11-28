@@ -1,9 +1,7 @@
 'use client'
 import styled from "styled-components";
-import { PrimaryButton } from "@/components/PrimaryButton"
 import { PolarisContext } from "@/context/PolarisContext";
 import { useContext } from "react";
-import { NavBar } from "@/components/NavBar";
 import { BuyButton } from "@/components/BuyButton";
 import { TitlePage } from "@/components/TitlePage";
 import { Navigator } from "@/containers/Navigator";
@@ -59,8 +57,9 @@ export default function CheckList() {
                     <TitlePage>LISTA DE COMPRAS</TitlePage>
                     <BackgroundGray>
                         <div>
-                            {context?.addProducts.map( product => (
+                            {context?.addProducts.map( (product, index) => (
                                 <CardProductInBag 
+                                    key={index}
                                     productName={product.name}
                                     productPrice={product.price}
                                     productImage={product.image}

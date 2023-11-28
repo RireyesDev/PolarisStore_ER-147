@@ -11,13 +11,11 @@ const MainContainer = styled.main`
     min-height: 92vh;
     background-color: white;
     display: grid;    
+    padding-bottom: 80px;
 `;
 
 const TableContainer = styled.section`
     width: 100%;
-    box-shadow: -12px 12px 14px 0px rgba(0,0,0,0.24);
-
-
     min-height: 320px;
     background-color: white;
     padding-top: 20px;
@@ -51,10 +49,7 @@ const TableProductCards = () => {
 
     return(
         <MainContainer>
-             <TableContainer style={{
-                width: `${context?.showCategories ? '80%' : '100%'}`,
-                borderRadius: `${context?.showCategories ? '30px 0px 0px 0px' : '0px'}`,
-             }}>
+             <TableContainer>
                 <TitlePage>PRODUCTOS</TitlePage>
                 {context?.products.map((product, index) => (
                     <Productcard 

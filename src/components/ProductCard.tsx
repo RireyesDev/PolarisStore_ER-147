@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import productExample from '/public/images/product_example.jpg'
 import Image from "next/image";
 import AddBagIcon from '/public/icons/add-bag.png'
 

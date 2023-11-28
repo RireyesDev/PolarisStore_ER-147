@@ -18,7 +18,12 @@ const BuyBTN = styled(PrimaryBTN)`
 
 const BuyButton = (props: any) => {
     return(
-        <BuyBTN onClick={props.btnClick}>{props.children}</BuyBTN>
+        <BuyBTN 
+            onClick={props.btnClick} 
+            style={{
+                width: `${props.btnWidth}px`,
+            }}
+        >{props.children}</BuyBTN>
     );
 }
 

@@ -2,8 +2,6 @@
 import { CardSignIn } from "@/components/Card_SignIn";
 import styled from "styled-components";
 
-// Create styled component for title Container 
-
 const DivContainer = styled.div`
     width: 100%;
     min-height: 100vh;

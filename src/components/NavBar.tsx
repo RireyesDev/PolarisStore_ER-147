@@ -2,7 +2,6 @@ import React, {useContext} from "react";
 import styled from "styled-components";
 import MenuIcon from '/public/icons/menu.png'
 import BagIcon from '/public/icons/bag.png'
-import UserIcon from '/public/icons/user.png'
 import PolariLogo from '/public/Polaris_Dark.svg'
 import { PolarisContext } from "@/context/PolarisContext";
 import { useRouter } from "next/navigation";
@@ -78,6 +77,9 @@ const NavBar = (props: any) => {
         if(context?.showBag === true){
             context?.setShowBag(!context.showBag);
         }
+        if(context?.showCategories === true){
+            context?.setShowCategories(!context.showCategories);
+        }
     }
 
     function clickBagCard(){
@@ -85,12 +87,18 @@ const NavBar = (props: any) => {
         if(context?.showAccount === true){
             context?.setShowAccount(!context.showAccount);
         }
+        if(context?.showCategories === true){
+            context?.setShowCategories(!context.showCategories);
+        }        
     }
 
     function clickCategories(){
         context?.setShowCategories(!context.showCategories);
         if(context?.showAccount === true){
             context?.setShowAccount(!context.showAccount);
+        }
+        if(context?.showBag === true){
+            context?.setShowBag(!context.showBag);
         }
     }
 

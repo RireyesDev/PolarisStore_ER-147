@@ -1,20 +1,19 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { PrimaryBTN, PrimaryButton } from "./PrimaryButton";
 import { useRouter } from "next/navigation";
 import { PolarisContext } from "@/context/PolarisContext";
 import { ImageProfile } from "./ImageProfile";
+import { PrimaryButton } from "./PrimaryButton";
 
 const Card = styled.div`
     position: absolute;
     top: 90px;
-    right: 4%;
+    right: 5%;
     width: 380px;
     height: 200px;
     background-color: #ffffff; /* Color blanco */
-    border-radius: 14px; /* Bordes redondeados */
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Sombra */
-    margin: 14px;
+    border-radius:  0px 0px 14px 14px; /* Bordes redondeados */
+    box-shadow: rgba(0, 0, 0, 0.208) 4px 4px 4px 0px;
     padding: 10px;
     /* Configuración de grid */
     display: grid;
@@ -65,6 +64,11 @@ const CardAccount = () => {
         context?.setShowAccount(false);
     }
 
+    function goToWelcome(){
+        router.push('/welcome')
+        context?.setShowAccount(false);
+    }
+
 
     return(
         <Card>
@@ -76,7 +80,7 @@ const CardAccount = () => {
                 <PrimaryButton btnClick={() => goToMyAccount()} btnWidth={220}>MI CUENTA</PrimaryButton>
             </AccountBtnContainer>
             <LogOutBtnContainer>
-                <PrimaryButton btnClick={() => {router.push('/welcome')}} btnWidth={140}>SALIR</PrimaryButton>
+                <PrimaryButton btnClick={() => goToWelcome()} btnWidth={140}>SALIR</PrimaryButton>
             </LogOutBtnContainer>
         </Card>
     );
