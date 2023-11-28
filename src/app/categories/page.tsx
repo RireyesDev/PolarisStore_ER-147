@@ -38,8 +38,6 @@ const Card = styled.button`
       transform: scale(1.1);
       transition: transform ease 0.5s;
   }
-
-  background-color: ${(props: { color: any; }) => props.color};
 `;
 
 const Title = styled.h3`
@@ -73,7 +71,11 @@ export default function Categories(props: any) {
                         <Card 
                             key={index} 
                             color={category.color} 
-                            onClick={() => router.push(`/categories/${path}`)}>{
+                            onClick={() => router.push(`/categories/${path}`)}
+                            style={{
+                                backgroundColor: `${category.color}`
+                            }}
+                        >{
                                 <Title>{category.categoria}</Title>
                             }
                         </Card>
