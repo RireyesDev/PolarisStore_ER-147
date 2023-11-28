@@ -66,6 +66,11 @@ const BagCard = () => {
         context?.setShowBag(false);
     }
 
+    function goToPayment(){
+        router.push('/checklist/billing');
+        context?.setShowBag(false);
+    }
+
     return(
         <Card>
             <BackgroundGray>
@@ -82,7 +87,7 @@ const BagCard = () => {
                 <PrimaryButton btnClick={() => goToChecklist()}>IR A LISTA DE COMPRAS</PrimaryButton>
             </WrapPrimaryButton>
             <WrapBuyButton>
-                <BuyButton>COMPRAR</BuyButton>
+                <BuyButton btnClick={() => goToPayment()}>COMPRAR</BuyButton>
             </WrapBuyButton>            
         </Card>
     );

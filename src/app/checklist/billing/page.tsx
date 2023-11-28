@@ -11,7 +11,7 @@ export default function Billing() {
         <>            
             <Navigator></Navigator> 
             <Main>
-                <CardEditForm></CardEditForm>
+                <CardEditForm typeButton={'billing'}></CardEditForm>
             </Main>
         </>       
     )

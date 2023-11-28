@@ -64,6 +64,11 @@ const CardAccount = () => {
         context?.setShowAccount(false);
     }
 
+    function goToWelcome(){
+        router.push('/welcome')
+        context?.setShowAccount(false);
+    }
+
 
     return(
         <Card>
@@ -75,7 +80,7 @@ const CardAccount = () => {
                 <PrimaryButton btnClick={() => goToMyAccount()} btnWidth={220}>MI CUENTA</PrimaryButton>
             </AccountBtnContainer>
             <LogOutBtnContainer>
-                <PrimaryButton btnClick={() => {router.push('/welcome')}} btnWidth={140}>SALIR</PrimaryButton>
+                <PrimaryButton btnClick={() => goToWelcome()} btnWidth={140}>SALIR</PrimaryButton>
             </LogOutBtnContainer>
         </Card>
     );

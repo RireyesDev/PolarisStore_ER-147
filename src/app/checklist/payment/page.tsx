@@ -11,7 +11,7 @@ export default function Payment() {
         <>
             <Navigator></Navigator>
             <Main>
-                <CardEditPayment></CardEditPayment>
+                <CardEditPayment typeButton="payment"></CardEditPayment>
             </Main>
         </>
     );

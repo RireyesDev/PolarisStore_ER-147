@@ -6,10 +6,14 @@ import { TextBox } from "./TextBox";
 import { DivContainer } from "@/styles/DivContainer";
 import { PrimaryButton } from "./PrimaryButton";
 import { ButtonContainer } from "@/styles/ButtonContainer";
+import { BuyButton } from "./BuyButton";
+import { useRouter } from "../../node_modules/next/navigation";
 
 
 
 const CardEditForm = (props: any) => {
+
+    const router = useRouter();
 
     return(
         <PolarisCard>
@@ -25,7 +29,10 @@ const CardEditForm = (props: any) => {
                 <TextBox title="Dirección de Entrega" placeHolder="Km 108, carretera al Atlantico..."></TextBox>
             </DivContainer>
             <ButtonContainer>
-                <PrimaryButton btnClick={props.editClick} btnWidth={140}>EDITAR</PrimaryButton>
+                {props.typeButton === 'billing' ? 
+                    <BuyButton btnClick={() => router.push('/checklist/payment')} btnWidth={140}>PAGAR</BuyButton> : 
+                    <PrimaryButton btnClick={props.saveClick} btnWidth={140}>EDITAR</PrimaryButton>
+                }
             </ButtonContainer>
             <ButtonContainer>
                 <PrimaryButton btnClick={props.exitClick} btnWidth={140}>SALIR</PrimaryButton>

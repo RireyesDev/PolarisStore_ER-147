@@ -60,13 +60,13 @@ const ListCategories = () => {
             <Title>CATEGORIAS</Title>
             {categories.map((button, index) => {
 
-                const path = button
+                const path = button.categoria
                     .toLowerCase() // Convertir texto a minúsculas
                     .replace(/\s+/g, '-') // Reemplazar espacios con guiones
                     .normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Eliminar tildes
 
                 return(
-                    <ButtonCategory key={index} onClick={() => router.push(`/categories/${path}`)}>{button}</ButtonCategory>
+                    <ButtonCategory key={index} onClick={() => router.push(`/categories/${path}`)}>{button.categoria}</ButtonCategory>
                 );
             })}
         </ContainerCategories>               
