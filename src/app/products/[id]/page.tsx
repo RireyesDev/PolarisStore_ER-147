@@ -1,15 +1,13 @@
 'use client'
 import styled from "styled-components";
 import Image from "next/image";
-import productExample from '/public/images/product_example.jpg'
 import { PrimaryButton } from "@/components/PrimaryButton"
-import { NavBar } from "@/components/NavBar";
 import { BuyButton } from "@/components/BuyButton";
-import { PolarisCard } from "@/components/PolarisCard";
 import { useContext } from "react";
 import { PolarisContext } from "@/context/PolarisContext";
 import { Navigator } from "@/containers/Navigator";
 import { useRouter } from "next/navigation";
+import { Footer } from "@/containers/Footer";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -164,8 +162,8 @@ export default function Products({params}: {params: { id: number}}) {
                         <PriceProduct>{theProduct.price}</PriceProduct>
                         <DescriptionProduct>{theProduct.description}</DescriptionProduct>
                         <CategoryProduct>Categories</CategoryProduct>
-                        <ContainerCategories>{theProduct.categories?.map(category => (
-                            <CategoryH4>{category}</CategoryH4>
+                        <ContainerCategories>{theProduct.categories?.map((category, index) => (
+                            <CategoryH4 key={index}>{category}</CategoryH4>
                         ))}</ContainerCategories>
                     </ContainerProduct>
                     <ContainerButtons>
@@ -174,6 +172,7 @@ export default function Products({params}: {params: { id: number}}) {
                     </ContainerButtons>
                 </Container>
             </MainContainer>
+            <Footer></Footer>
         </>
     );
 }

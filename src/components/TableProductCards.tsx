@@ -11,13 +11,11 @@ const MainContainer = styled.main`
     min-height: 92vh;
     background-color: white;
     display: grid;    
+    padding-bottom: 80px;
 `;
 
 const TableContainer = styled.section`
     width: 100%;
-    box-shadow: -12px 12px 14px 0px rgba(0,0,0,0.24);
-
-
     min-height: 320px;
     background-color: white;
     padding-top: 20px;

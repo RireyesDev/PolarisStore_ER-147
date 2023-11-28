@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { PrimaryBTN, PrimaryButton } from "./PrimaryButton";
 import { useRouter } from "next/navigation";
 import { PolarisContext } from "@/context/PolarisContext";
 import { ImageProfile } from "./ImageProfile";
+import { PrimaryButton } from "./PrimaryButton";
 
 const Card = styled.div`
     position: absolute;

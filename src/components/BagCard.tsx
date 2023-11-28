@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { BuyButton } from "./BuyButton";
 import { PrimaryButton } from "./PrimaryButton";
-import { PolarisCard } from "./PolarisCard";
 import { PolarisContext } from "@/context/PolarisContext";
 import { useRouter } from "next/navigation";
 import { CardProductInBag } from "./CardProductInBag";
@@ -74,8 +73,9 @@ const BagCard = () => {
     return(
         <Card>
             <BackgroundGray>
-                {context?.addProducts.map( product => (
+                {context?.addProducts.map( (product, index) => (
                     <CardProductInBag 
+                        key={index}
                         productName={product.name}
                         productPrice={product.price}
                         productImage={product.image}

@@ -1,5 +1,4 @@
 'use client'
-import { PrimaryButton } from "@/components/PrimaryButton"
 import { Main } from "@/containers/Main";
 import { Navigator } from "@/containers/Navigator"
 import { TitlePage } from "@/components/TitlePage";

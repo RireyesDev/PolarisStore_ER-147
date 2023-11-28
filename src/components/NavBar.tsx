@@ -2,7 +2,6 @@ import React, {useContext} from "react";
 import styled from "styled-components";
 import MenuIcon from '/public/icons/menu.png'
 import BagIcon from '/public/icons/bag.png'
-import UserIcon from '/public/icons/user.png'
 import PolariLogo from '/public/Polaris_Dark.svg'
 import { PolarisContext } from "@/context/PolarisContext";
 import { useRouter } from "next/navigation";

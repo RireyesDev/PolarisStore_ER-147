@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { PolarisCard } from "./PolarisCard";
 import { TitleCard } from "./TitleCard";
 import { TextBox } from "./TextBox";

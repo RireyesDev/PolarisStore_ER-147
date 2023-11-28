@@ -1,7 +1,6 @@
 'use client'
 import styled from "styled-components";
 import { PrimaryButton } from "@/components/PrimaryButton"
-import { NavBar } from "@/components/NavBar";
 import { TitlePage } from "@/components/TitlePage";
 import { Navigator } from "@/containers/Navigator";
 import { ImageProfile } from "@/components/ImageProfile";
@@ -9,6 +8,7 @@ import { useState } from "react";
 import { CardEditAccount } from "@/components/Card_EditAccount";
 import { CardEditForm } from "@/components/Card_EditForm";
 import { CardEditPayment } from "@/components/Card_EditPayment";
+import { Footer } from "@/containers/Footer";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -32,8 +32,8 @@ const GridContainer = styled.div`
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: 1fr 2fr 2fr;
-    gap: 10px;
-    height: 920px;
+    min-height: 1100px;
+    padding-bottom: 40px;
     justify-self: center;
 `;
 
@@ -55,7 +55,6 @@ const CardSection = styled.div`
     grid-template-columns: 20% 40% 40%;
     grid-template-rows: repeat(3, 33.33%);
     border-radius: 10px;
-    margin-top: 40px;
 `;
 
 const CardSection2 = styled(CardSection)`
@@ -195,6 +194,7 @@ export default function Welcome() {
 
                 
             </MainContainer>
+            <Footer></Footer>
         </>
     );
 }
