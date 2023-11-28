@@ -4,6 +4,7 @@ import { PolarisContext } from "@/context/PolarisContext"
 import type { PolarisContextType } from '@/context/PolarisContext'
 import { productsMain } from "@/database/products"
 import { Products } from "@/context/PolarisContext"
+import { GlobalStyles } from "./globalStyles"
 
 
 export default function MainClientComponent(props: any) {
@@ -33,6 +34,9 @@ export default function MainClientComponent(props: any) {
     return(        
         <PolarisContext.Provider 
             value={polarisContextValue} 
-        >{props.children}</PolarisContext.Provider>
+        >
+            <GlobalStyles></GlobalStyles>
+            {props.children}
+        </PolarisContext.Provider>
     );
 }
