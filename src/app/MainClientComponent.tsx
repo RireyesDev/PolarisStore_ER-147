@@ -2,9 +2,13 @@
 import React, { useState } from "react"
 import { PolarisContext } from "@/context/PolarisContext"
 import type { PolarisContextType } from '@/context/PolarisContext'
+import { UserContext } from '@/context/UsersContext'
+import type { UserContextType } from '@/context/UsersContext'
+import { Users } from "@/context/UsersContext"
 import { productsMain } from "@/database/products"
 import { Products } from "@/context/PolarisContext"
 import { GlobalStyles } from "./globalStyles"
+import { users } from "@/database/users"
 
 
 export default function MainClientComponent(props: any) {
@@ -15,6 +19,9 @@ export default function MainClientComponent(props: any) {
 
     const [products, setProducts] = useState(productsMain);
     const [addProducts, setAddProducts] = useState<Products[]>([]);
+
+
+    const [showInfoUsers, setShowInfoUsers] = useState<Users[]>(users);
 
 
 
@@ -31,12 +38,21 @@ export default function MainClientComponent(props: any) {
       setAddProducts,
     }
 
-    return(        
-        <PolarisContext.Provider 
-            value={polarisContextValue} 
+    const userContextValue : UserContextType = {
+        showInfoUsers,
+        setShowInfoUsers,  
+      }
+
+    return(   
+        <UserContext.Provider 
+            value={userContextValue}
         >
-            <GlobalStyles></GlobalStyles>
-            {props.children}
-        </PolarisContext.Provider>
+            <PolarisContext.Provider 
+                value={polarisContextValue} 
+                >
+                <GlobalStyles></GlobalStyles>
+                {props.children}
+            </PolarisContext.Provider>
+        </UserContext.Provider>     
     );
 }
