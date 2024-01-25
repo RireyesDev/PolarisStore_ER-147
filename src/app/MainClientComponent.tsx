@@ -22,6 +22,7 @@ export default function MainClientComponent(props: any) {
 
 
     const [showInfoUsers, setShowInfoUsers] = useState<Users[]>(users);
+    const [userLogged, setUserLogged] = useState<Users[]>(users);
 
 
 
@@ -41,6 +42,8 @@ export default function MainClientComponent(props: any) {
     const userContextValue : UserContextType = {
         showInfoUsers,
         setShowInfoUsers,  
+        userLogged,
+        setUserLogged,
       }
 
     return(   
