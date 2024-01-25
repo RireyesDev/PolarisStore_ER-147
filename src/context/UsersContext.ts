@@ -6,6 +6,7 @@ type Users = {
     lastName: string;
     email: string;
     password: string;
+    profile: string | null;
 }
 
 type UserContextType = {

@@ -67,7 +67,13 @@ const CardAccount = () => {
     }
 
     function goToWelcome(){
-        contextUser?.setUserLogged([]);
+        contextUser?.setUserLogged([{
+            name: "",
+            lastName: "",
+            email: "",
+            password: "",
+            profile: "",
+        }]);
         console.log(contextUser?.userLogged[0].name);
         
         router.push('/welcome')
@@ -78,11 +84,19 @@ const CardAccount = () => {
     
     const nameUser = contextUser?.userLogged[0].name;
     const lastName = contextUser?.userLogged[0].lastName;
+    const urlImage = contextUser?.userLogged[0].profile;
 
     return(
         <Card>
             <UserContainer>
-                <ImageProfile imgSize={92} noCursor></ImageProfile>
+                <ImageProfile 
+                    imgSize={92} 
+                    noCursor 
+                    profile={urlImage}  
+                    alt="Example" 
+                    width={700} 
+                    height={700}
+                ></ImageProfile>
             </UserContainer>            
             <NameUser>{nameUser} {lastName}</NameUser>
             <AccountBtnContainer>
