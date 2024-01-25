@@ -1,4 +1,5 @@
 'use client'
+import { useContext } from "react";
 import styled from "styled-components";
 import { PrimaryButton } from "@/components/PrimaryButton"
 import { TitlePage } from "@/components/TitlePage";
@@ -9,6 +10,7 @@ import { CardEditAccount } from "@/components/Card_EditAccount";
 import { CardEditForm } from "@/components/Card_EditForm";
 import { CardEditPayment } from "@/components/Card_EditPayment";
 import { Footer } from "@/containers/Footer";
+import { UserContext } from "@/context/UsersContext";
 
 const MainContainer = styled.main`
     width: 100%;
@@ -134,6 +136,12 @@ export default function Welcome() {
     const [showEditFormPayment, setShowEditFormPayment] = useState(false);
     const [showEditPayment, setShowEditPayment] = useState(false);
 
+    const contextUser = useContext(UserContext)
+
+    const name = contextUser?.userLogged[0].name;
+    const lastName = contextUser?.userLogged[0].lastName;
+    const email = contextUser?.userLogged[0].email;
+    const profile = contextUser?.userLogged[0].profile;
     
     return (
         <>
@@ -143,10 +151,17 @@ export default function Welcome() {
                 <GridContainer>
                     <InfoContainer>
                         <ImageProfileContainer>
-                            <ImageProfile imgSize={100} noCursor></ImageProfile>
+                            <ImageProfile 
+                                imgSize={92} 
+                                noCursor 
+                                profile={profile}  
+                                alt="Example" 
+                                width={700} 
+                                height={700}
+                            ></ImageProfile>
                         </ImageProfileContainer>                        
-                        <NameProfile>Eduardo Rireyes</NameProfile>
-                        <EmailProfile>exmple2024@gmail.com</EmailProfile>
+                        <NameProfile>{name} {lastName}</NameProfile>
+                        <EmailProfile>{email}</EmailProfile>
                         <CountryProfile>Argentina</CountryProfile>
                         <DivContainer>
                             <PrimaryButton btnClick={() => setShowEditAccount(!showEditAccount)} btnWidth={200}>Editar Cuenta</PrimaryButton>                            

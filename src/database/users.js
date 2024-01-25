@@ -11,7 +11,7 @@ const users = [
         name: "Jorge",
         lastName: "Nitales",
         email: "jorgenitales69@gmail.com",
-        password: "la_concha32",
+        password: "laconcha",
         profile: "https://res.cloudinary.com/dejj8n6g7/image/upload/v1706211234/PolarisPhotoUsers/xC2wV37h_400x400_mbwqtk.jpg",
     },
     {
