@@ -50,10 +50,7 @@ const CheckUser = (refTextEmail: any, refTextPassword : any, context: any, route
   // de lo contrario, muestra un mensaje de error.
   if(newArray.length > 0){
     router.push('/home');
-    context.setUserLogged(...newArray);
-    console.log(newArray);    
-    console.log(context.userLogged);
-    
+    context.setUserLogged(newArray);    
   } else {
     console.log("Usuario o contraseña incorrectos");    
   }

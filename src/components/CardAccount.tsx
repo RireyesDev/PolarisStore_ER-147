@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { PolarisContext } from "@/context/PolarisContext";
 import { ImageProfile } from "./ImageProfile";
 import { PrimaryButton } from "./PrimaryButton";
+import { UserContext } from "@/context/UsersContext";
 
 const Card = styled.div`
     position: absolute;
@@ -56,6 +57,7 @@ const NameUser = styled.h3`
 const CardAccount = () => {
 
     const context = useContext(PolarisContext);
+    const contextUser = useContext(UserContext);
 
     const router = useRouter();
 
@@ -65,17 +67,24 @@ const CardAccount = () => {
     }
 
     function goToWelcome(){
+        contextUser?.setUserLogged([]);
+        console.log(contextUser?.userLogged[0].name);
+        
         router.push('/welcome')
         context?.setShowAccount(false);
     }
 
+    console.log(contextUser?.userLogged);
+    
+    const nameUser = contextUser?.userLogged[0].name;
+    const lastName = contextUser?.userLogged[0].lastName;
 
     return(
         <Card>
             <UserContainer>
                 <ImageProfile imgSize={92} noCursor></ImageProfile>
             </UserContainer>            
-            <NameUser>Eduardo Rireyes</NameUser>
+            <NameUser>{nameUser} {lastName}</NameUser>
             <AccountBtnContainer>
                 <PrimaryButton btnClick={() => goToMyAccount()} btnWidth={220}>MI CUENTA</PrimaryButton>
             </AccountBtnContainer>
