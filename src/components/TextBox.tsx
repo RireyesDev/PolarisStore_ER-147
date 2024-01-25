@@ -34,7 +34,7 @@ const TextBox = (props: any) => {
     return(
         <Container>
             <Title>{props.title}</Title>
-            <InputText type="text" placeholder={props.placeHolder}></InputText>
+            <InputText ref={props.reference} type="text" placeholder={props.placeHolder}></InputText>
         </Container>
     );
 }

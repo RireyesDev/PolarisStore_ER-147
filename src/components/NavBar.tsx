@@ -6,6 +6,7 @@ import PolariLogo from '/public/Polaris_Dark.svg'
 import { PolarisContext } from "@/context/PolarisContext";
 import { useRouter } from "next/navigation";
 import { ImageProfile } from "./ImageProfile";
+import { UserContext } from "@/context/UsersContext";
 
 // Create Navbar component styled component, name: NavBar
 const NavContainer = styled.nav`
@@ -104,6 +105,16 @@ const NavBar = (props: any) => {
 
     const router = useRouter();
 
+    const contextUser = useContext(UserContext);
+
+    const noEmptyPhotoProfile = () =>{
+        if(contextUser?.userLogged[0].profile !== undefined){
+            return contextUser?.userLogged[0].profile;
+        } else {
+            return "";
+        }
+    }
+
     function goHome(){
         router.push('/home');
     }
@@ -114,7 +125,13 @@ const NavBar = (props: any) => {
             <HomeButton onClick={() => goHome()}></HomeButton>
             <BagButton onClick={() => clickBagCard()}></BagButton>
             <UserContainer>
-                <ImageProfile imgClick={() => clickUserCard()} imgSize={32}></ImageProfile>
+                <ImageProfile 
+                    imgClick={() => clickUserCard()}                     
+                    alt="Example" 
+                    width={54} 
+                    height={54}
+                    profile={noEmptyPhotoProfile()}
+                ></ImageProfile>
             </UserContainer>
         </NavContainer>
     );
