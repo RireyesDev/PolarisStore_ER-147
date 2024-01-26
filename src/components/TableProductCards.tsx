@@ -12,6 +12,12 @@ const MainContainer = styled.main`
     background-color: white;
     display: grid;    
     padding-bottom: 80px;
+
+    @media (max-width: 768px) {
+        display: flex;
+        height: auto;
+        min-height: auto;
+    }
 `;
 
 const TableContainer = styled.section`
@@ -25,8 +31,24 @@ const TableContainer = styled.section`
     gap: 10px;
     justify-self: right;    
     z-index: 2;
+
+    @media (max-width: 768px) {
+        display: grid;
+        
+        grid-template-rows: 160px 80%;
+        min-height: auto;
+    }       
 `;
 
+const Container = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+`;
 
 const TableProductCards = () => {
 
@@ -51,16 +73,18 @@ const TableProductCards = () => {
         <MainContainer>
              <TableContainer>
                 <TitlePage>PRODUCTOS</TitlePage>
-                {context?.products.map((product, index) => (
-                    <Productcard 
-                        key={index}
-                        image={product.image}
-                        price={product.price}
-                        name={product.name}
-                        viewProduct={() => goToProduct(product.id)}
-                        clickBuyProduct={() => buyProduct(product.id)}
-                    ></Productcard>    
-                ))}
+                <Container>
+                    {context?.products.map((product, index) => (
+                        <Productcard 
+                            key={index}
+                            image={product.image}
+                            price={product.price}
+                            name={product.name}
+                            viewProduct={() => goToProduct(product.id)}
+                            clickBuyProduct={() => buyProduct(product.id)}
+                        ></Productcard>    
+                    ))}
+                </Container>
             </TableContainer>
         </MainContainer>       
     );

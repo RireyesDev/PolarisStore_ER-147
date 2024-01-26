@@ -20,6 +20,11 @@ const NavContainer = styled.nav`
     place-items: center;
     border-bottom: 1px solid var(--dark-color);
     z-index: 5;
+
+    @media (max-width: 768px){
+        min-width: 100%;    
+        grid-template-columns: 15% 20% 35% 15% 15%;
+    }
 `;
 
 // Create component styled button name: MenuButton  
@@ -43,6 +48,11 @@ const MenuButton = styled(TheButton)`
     background-image: url(${MenuIcon.src});
     justify-self: right;
     margin-right: 18%;
+
+    @media (max-width: 768px){
+        margin-right: 0; 
+        justify-self: center;   
+    }
 `;
 
 const HomeButton = styled(TheButton)`
@@ -59,6 +69,13 @@ const BagButton = styled(TheButton)`
     background-image: url(${BagIcon.src});
     justify-self: right;
     margin-right: 18%;
+
+    @media (max-width: 768px){
+        width: 32px;
+        height: 32px;
+        margin-right: 0;
+        justify-self: center;
+    }
 `;
 
 const UserContainer = styled.div`   
@@ -67,6 +84,13 @@ const UserContainer = styled.div`
     margin-left: 18%;
     display: grid;
     place-content: center;
+
+    @media (max-width: 768px){
+        width: 34px;
+        height: 34px;
+        margin-left: 0;
+        justify-self: center;
+    }
 `;
 
 const NavBar = (props: any) => {
@@ -128,8 +152,8 @@ const NavBar = (props: any) => {
                 <ImageProfile 
                     imgClick={() => clickUserCard()}                     
                     alt="Example" 
-                    width={54} 
-                    height={54}
+                    width={0} 
+                    height={0}
                     profile={noEmptyPhotoProfile()}
                 ></ImageProfile>
             </UserContainer>

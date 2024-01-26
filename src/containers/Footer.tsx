@@ -32,6 +32,12 @@ const YearContainer = styled.div`
   grid-column: 2 / 3; 
   grid-row: 1 / 2;
   place-self: center;
+
+  @media (max-width: 768px) {
+    width: 134px;
+    font-size: 14px;
+    justify-self: center;
+  }
 `;
 
 
