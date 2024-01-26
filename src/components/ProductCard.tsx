@@ -19,6 +19,12 @@ const Container = styled.div`
     transform: scale(1.03);
     transition: transform 0.4s ease;
   }
+
+  @media (max-width: 768px) {
+    width: 140px;
+    height: 160px;
+    border-radius: 10px;
+  }
 `;
 
 const ImageContainer = styled(Image)`
@@ -50,6 +56,10 @@ const Price = styled.h3`
     ${TextContainer}
     font-size: 16px;
     font-weight: bold;    
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
 `;
 
 const Name = styled.h4`
@@ -58,6 +68,10 @@ const Name = styled.h4`
     font-weight: normal;    
     align-content: start;    
     text-overflow: ellipsis;
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
 `;
 
 const IconSpan = styled.span`
@@ -68,6 +82,11 @@ const IconSpan = styled.span`
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    @media (max-width: 768px) {
+        width: 24px;
+        height: 24px;
+    }
 `;
 
 const BuyButton = styled.button`
@@ -91,6 +110,11 @@ const BuyButton = styled.button`
 
   &:active {
     background-color: var(--primary-color_triad_active);
+  }
+
+  @media (max-width: 768px) {
+    width: 32px;
+    height: 32px;
   }
 `;
 

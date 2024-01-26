@@ -16,6 +16,11 @@ const UserImage = styled(Image)`
     &:hover {
         transform: scale(1.05);
     }
+
+    @media (max-width: 768px) {
+        width: 38px;
+        height: 38px;
+    }
 `;
 
 
@@ -30,8 +35,8 @@ const ImageProfile = (props: any) => {
                 }}
                 src={props.profile}
                 alt="Example" 
-                width={54} 
-                height={54}
+                width={34} 
+                height={34}
                 onClick={props.imgClick}
             ></UserImage>
         </>

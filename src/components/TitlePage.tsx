@@ -12,6 +12,18 @@ const TitleContainer = styled.h2`
     letter-spacing: 3px;
     font-size: 32px;
     font-family: 'Nunito', sans-serif;
+
+    @media (max-width: 768px) {
+        height: 38px;
+        font-size: 28px;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        justify-self: center;
+        align-self: center;
+        margin-top: 0px;
+        margin-bottom: 0px; 
+        text-align: center;
+    }
 `;
 
 
