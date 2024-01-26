@@ -1,7 +1,9 @@
 'use client'
+import { useEffect } from 'react'
 import styles from './page.module.css'
 import { GlobalStyles } from './globalStyles'
 import { useRouter } from '../../node_modules/next/navigation'
+
 
 export default function HomePage() {
 
@@ -9,7 +11,11 @@ export default function HomePage() {
 
   return (
     <main className={styles.main}>     
-      <>{router.push('/home')}</>
+      <>{
+        useEffect(() => {
+          router.push('/home')
+        }, [])
+      }</>
     </main>
   )
 }
