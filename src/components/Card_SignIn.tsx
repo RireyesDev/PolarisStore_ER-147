@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useState } from "react";
 import styled from "styled-components";
 import { PolarisCard } from "./PolarisCard";
 import { TitleCard } from "./TitleCard";
@@ -20,19 +20,49 @@ const ContainerButton = styled.div`
 const CardSignIn = () => {
 
     const router = useRouter();
+    
+    const refName = useRef();
+    const refLastName = useRef();
+    const refEmail = useRef();
+    const refPassword = useRef();
+    const refConfirmPassword = useRef();
+
+    const [arrayObject, setArrayObject] = useState<any[]>([]);
+
+    const newUser = () => {
+
+
+        const name = refName?.current?.value;
+        const lastName = refLastName?.current?.value;
+        const email = refEmail?.current?.value;
+        const password = refPassword?.current?.value;
+        const confirmPassword = refConfirmPassword?.current?.value;
+
+        const newObject = {
+            name: name, 
+            lastName: lastName, 
+            email: email, 
+            password: password,
+        };
+
+        setArrayObject([...arrayObject, newObject]);
+    }
+
+    console.log(arrayObject);
+    
 
     return(
         <PolarisCard>
             <TitleCard title="CREAR CUENTA"></TitleCard>
             <DivContainer>
-                <TextBox title="Nombre" placeHolder="Jonh"></TextBox>
-                <TextBox title="Apellido" placeHolder="Wick"></TextBox>
-                <TextBox title="Email" placeHolder="example2023@gmail.com"></TextBox>
-                <TextBox title="Añadir Contraseña" placeHolder="*****************" type="password"></TextBox>
-                <TextBox title="Repetir Contraseña" placeHolder="*****************" type="password"></TextBox>
+                <TextBox reference={refName} title="Nombre" placeHolder="Jonh"></TextBox>
+                <TextBox reference={refLastName} title="Apellido" placeHolder="Wick"></TextBox>
+                <TextBox reference={refEmail} title="Email" placeHolder="example2023@gmail.com"></TextBox>
+                <TextBox reference={refPassword} title="Añadir Contraseña" placeHolder="*****************" type="password"></TextBox>
+                <TextBox reference={refConfirmPassword} title="Repetir Contraseña" placeHolder="*****************" type="password"></TextBox>
             </DivContainer>
             <ContainerButton>
-                <PrimaryButton btnClick={() => router.push('/home')} btnWidth={280}>CREAR USUARIO</PrimaryButton>
+                <PrimaryButton btnClick={() =>newUser()} btnWidth={280}>CREAR USUARIO</PrimaryButton>
             </ContainerButton>
         </PolarisCard>
     );
