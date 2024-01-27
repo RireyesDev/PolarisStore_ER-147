@@ -9,9 +9,13 @@ import { productsMain } from "@/database/products"
 import { Products } from "@/context/PolarisContext"
 import { GlobalStyles } from "./globalStyles"
 import { users } from "@/database/users"
+import { useLocalStorage } from "@/hooks/useLocalStorage"
 
 
 export default function MainClientComponent(props: any) {
+
+    const { showInfoUsers, setShowInfoUsers,  userLogged, 
+        setUserLogged } = useLocalStorage();
 
     const [showAccount, setShowAccount] = useState<boolean>(false);
     const [showBag, setShowBag] = useState<boolean>(false);
@@ -19,12 +23,7 @@ export default function MainClientComponent(props: any) {
 
     const [products, setProducts] = useState(productsMain);
     const [addProducts, setAddProducts] = useState<Products[]>([]);
-
-
-    const [showInfoUsers, setShowInfoUsers] = useState<Users[]>(users);
-    const [userLogged, setUserLogged] = useState<Users[]>(users);
-
-
+    
 
     const polarisContextValue : PolarisContextType = {
       showAccount,
@@ -44,7 +43,7 @@ export default function MainClientComponent(props: any) {
         setShowInfoUsers,  
         userLogged,
         setUserLogged,
-      }
+    }
 
     return(   
         <UserContext.Provider 
